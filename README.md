@@ -1,3 +1,14 @@
+---
+title: Business Chat OpenEnv
+emoji: 💬
+colorFrom: blue
+colorTo: green
+sdk: docker
+pinned: false
+tags:
+  - openenv
+---
+
 # Business Chat OpenEnv
 
 An OpenEnv environment that trains and evaluates AI agents on real-world business chat group analysis. Agents learn to classify messages, discover topic clusters, and generate highly tailored prompt templates for specific business contexts.
