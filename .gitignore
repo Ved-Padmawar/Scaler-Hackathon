@@ -25,6 +25,9 @@ build/
 # uv
 # Keep uv.lock (needed for Docker build)
 
+# Claude Code
+.claude/
+
 # IDE
 .vscode/
 .idea/
