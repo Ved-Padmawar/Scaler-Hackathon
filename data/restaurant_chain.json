@@ -1,0 +1,1065 @@
+{
+  "business_name": "Spice Garden Restaurants",
+  "business_type": "restaurant_chain",
+  "group_name": "Operations Team",
+  "description": "A noisy WhatsApp-style operations group for Spice Garden Restaurants with interleaved menu questions, reservations, complaints, delivery chatter, and short operational follow-ups.",
+  "available_labels": [
+    "menu_inquiry",
+    "reservation",
+    "complaint",
+    "delivery",
+    "general"
+  ],
+  "messages": [
+    {
+      "id": "msg_001",
+      "sender": "Karan",
+      "text": "lunch ke baad dekhte",
+      "timestamp": "2024-01-15T09:05:00",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_002",
+      "sender": "Ishita",
+      "text": "branch kaun sa less crowded hai tonight",
+      "timestamp": "2024-01-15T09:18:45",
+      "ground_truth_label": "reservation"
+    },
+    {
+      "id": "msg_003",
+      "sender": "Ishita",
+      "text": "takeaway bag ready, payment link sent",
+      "timestamp": "2024-01-15T09:44:15",
+      "ground_truth_label": "delivery"
+    },
+    {
+      "id": "msg_004",
+      "sender": "Ishita",
+      "text": "customer pickup 10 min me pohchega",
+      "timestamp": "2024-01-15T10:07:15",
+      "ground_truth_label": "delivery"
+    },
+    {
+      "id": "msg_005",
+      "sender": "Ishita",
+      "text": "sent above",
+      "timestamp": "2024-01-15T10:21:00",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_006",
+      "sender": "Ishita",
+      "text": "sizzler me egg hota hai ya pure veg version hai",
+      "timestamp": "2024-01-15T10:36:15",
+      "ground_truth_label": "menu_inquiry"
+    },
+    {
+      "id": "msg_007",
+      "sender": "Ishita",
+      "text": "app me delivered dikh raha but handover pending tha",
+      "timestamp": "2024-01-15T10:59:45",
+      "ground_truth_label": "delivery"
+    },
+    {
+      "id": "msg_008",
+      "sender": "Ishita",
+      "text": "ice cream flavor kaunsa bacha currently",
+      "timestamp": "2024-01-15T11:19:45",
+      "ground_truth_label": "menu_inquiry"
+    },
+    {
+      "id": "msg_009",
+      "sender": "Ishita",
+      "text": "packing seal loose nikli",
+      "timestamp": "2024-01-15T11:41:45",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_010",
+      "sender": "Ishita",
+      "text": "Noida branch me 4 pax for 7:15 hold karna",
+      "timestamp": "2024-01-15T11:52:00",
+      "ground_truth_label": "reservation"
+    },
+    {
+      "id": "msg_011",
+      "sender": "Ishita",
+      "text": "washroom dirty bola sunday dinner me",
+      "timestamp": "2024-01-15T12:02:00",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_012",
+      "sender": "Ishita",
+      "text": "delay hua 35 min, callback please",
+      "timestamp": "2024-01-15T12:18:00",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_013",
+      "sender": "Amit",
+      "text": "which branch",
+      "timestamp": "2024-01-15T12:45:00",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_014",
+      "sender": "Amit",
+      "text": "COD order confirm kar liya customer ne",
+      "timestamp": "2024-01-15T13:02:00",
+      "ground_truth_label": "delivery"
+    },
+    {
+      "id": "msg_015",
+      "sender": "Karan",
+      "text": "same table chahiye as last visit",
+      "timestamp": "2024-01-15T13:27:15",
+      "ground_truth_label": "reservation"
+    },
+    {
+      "id": "msg_016",
+      "sender": "Karan",
+      "text": "customer ko exact portion size puchna hai",
+      "timestamp": "2024-01-15T13:30:15",
+      "ground_truth_label": "menu_inquiry"
+    },
+    {
+      "id": "msg_017",
+      "sender": "Anita",
+      "text": "ok done",
+      "timestamp": "2024-01-15T13:43:15",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_018",
+      "sender": "Kavya",
+      "text": "naan rubbery tha, guest not happy",
+      "timestamp": "2024-01-15T13:55:30",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_019",
+      "sender": "Nidhi",
+      "text": "8 pm ko 8:30 shift kar do guest call aya",
+      "timestamp": "2024-01-15T14:10:00",
+      "ground_truth_label": "reservation"
+    },
+    {
+      "id": "msg_020",
+      "sender": "Ishita",
+      "text": "chef special me aaj kya chal raha",
+      "timestamp": "2024-01-15T14:17:00",
+      "ground_truth_label": "menu_inquiry"
+    },
+    {
+      "id": "msg_021",
+      "sender": "Ishita",
+      "text": "washroom dirty bola sunday dinner me",
+      "timestamp": "2024-01-15T14:36:30",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_022",
+      "sender": "Ishita",
+      "text": "biryani combo me raita included hai ya extra",
+      "timestamp": "2024-01-15T14:57:30",
+      "ground_truth_label": "menu_inquiry"
+    },
+    {
+      "id": "msg_023",
+      "sender": "Vikas",
+      "text": "table for 8 at 8:30 cp confirm fast",
+      "timestamp": "2024-01-15T15:05:30",
+      "ground_truth_label": "reservation"
+    },
+    {
+      "id": "msg_024",
+      "sender": "Vikas",
+      "text": "branch kaun sa less crowded hai tonight",
+      "timestamp": "2024-01-15T15:11:15",
+      "ground_truth_label": "reservation"
+    },
+    {
+      "id": "msg_025",
+      "sender": "Kavya",
+      "text": "chef se confirm karo",
+      "timestamp": "2024-01-15T15:27:00",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_026",
+      "sender": "Kavya",
+      "text": "sesame salad me allergen kya kya hai",
+      "timestamp": "2024-01-15T15:51:00",
+      "ground_truth_label": "menu_inquiry"
+    },
+    {
+      "id": "msg_027",
+      "sender": "Karan",
+      "text": "chef se confirm karo",
+      "timestamp": "2024-01-15T16:09:45",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_028",
+      "sender": "Karan",
+      "text": "same gravy me mushroom add kar sakte?",
+      "timestamp": "2024-01-15T16:16:45",
+      "ground_truth_label": "menu_inquiry"
+    },
+    {
+      "id": "msg_029",
+      "sender": "Karan",
+      "text": "Noida branch me 4 pax for 7:15 hold karna",
+      "timestamp": "2024-01-15T16:34:00",
+      "ground_truth_label": "reservation"
+    },
+    {
+      "id": "msg_030",
+      "sender": "Karan",
+      "text": "vegan dessert me aaj kya ready hai",
+      "timestamp": "2024-01-15T16:51:15",
+      "ground_truth_label": "menu_inquiry"
+    },
+    {
+      "id": "msg_031",
+      "sender": "Amit",
+      "text": "brownie with ice cream abhi available?",
+      "timestamp": "2024-01-15T17:15:15",
+      "ground_truth_label": "menu_inquiry"
+    },
+    {
+      "id": "msg_032",
+      "sender": "Amit",
+      "text": "parcel shelf pe ready hai, pickup guy ko call karo",
+      "timestamp": "2024-01-15T17:43:45",
+      "ground_truth_label": "delivery"
+    },
+    {
+      "id": "msg_033",
+      "sender": "Anita",
+      "text": "burger bun soggy aa gaya",
+      "timestamp": "2024-01-15T17:56:30",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_034",
+      "sender": "Arjun",
+      "text": "customer bas pooch raha, order confirm nahi hua abhi",
+      "timestamp": "2024-01-15T18:04:30",
+      "ground_truth_label": "menu_inquiry"
+    },
+    {
+      "id": "msg_035",
+      "sender": "Arjun",
+      "text": "food warm tha, hot nahi",
+      "timestamp": "2024-01-15T18:21:45",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_036",
+      "sender": "Arjun",
+      "text": "keto bowl photo jaisa hi serve hoga na",
+      "timestamp": "2024-01-15T18:43:00",
+      "ground_truth_label": "menu_inquiry"
+    },
+    {
+      "id": "msg_037",
+      "sender": "Neha",
+      "text": "gravy spilled in parcel again",
+      "timestamp": "2024-01-15T19:06:30",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_038",
+      "sender": "Arjun",
+      "text": "pickup rescheduled, rider changed",
+      "timestamp": "2024-01-15T19:31:45",
+      "ground_truth_label": "delivery"
+    },
+    {
+      "id": "msg_039",
+      "sender": "Arjun",
+      "text": "high chair with 7 pm booking please note",
+      "timestamp": "2024-01-15T19:49:00",
+      "ground_truth_label": "reservation"
+    },
+    {
+      "id": "msg_040",
+      "sender": "Pooja",
+      "text": "name Aarav family, 3 adults 2 kids",
+      "timestamp": "2024-01-15T19:58:30",
+      "ground_truth_label": "reservation"
+    },
+    {
+      "id": "msg_041",
+      "sender": "Pooja",
+      "text": "call me once",
+      "timestamp": "2024-01-15T20:16:30",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_042",
+      "sender": "Pooja",
+      "text": "replacement dessert complimentary ke saath bhejna",
+      "timestamp": "2024-01-15T20:27:00",
+      "ground_truth_label": "delivery"
+    },
+    {
+      "id": "msg_043",
+      "sender": "Ishita",
+      "text": "sheet update karo",
+      "timestamp": "2024-01-15T20:48:15",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_044",
+      "sender": "Ishita",
+      "text": "fries limp ho gaye delivery tak",
+      "timestamp": "2024-01-15T21:09:30",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_045",
+      "sender": "Saurabh",
+      "text": "which branch",
+      "timestamp": "2024-01-15T21:34:45",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_046",
+      "sender": "Manish",
+      "text": "token print ho gaya but kitchen slip missing thi",
+      "timestamp": "2024-01-15T21:38:15",
+      "ground_truth_label": "delivery"
+    },
+    {
+      "id": "msg_047",
+      "sender": "Manish",
+      "text": "waitlist pe dalo if no show ho",
+      "timestamp": "2024-01-15T21:49:15",
+      "ground_truth_label": "reservation"
+    },
+    {
+      "id": "msg_048",
+      "sender": "Manish",
+      "text": "name Aarav family, 3 adults 2 kids",
+      "timestamp": "2024-01-15T21:38:45",
+      "ground_truth_label": "reservation"
+    },
+    {
+      "id": "msg_049",
+      "sender": "Manish",
+      "text": "dessert melted pahunch gaya",
+      "timestamp": "2024-01-15T21:50:45",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_050",
+      "sender": "Kavya",
+      "text": "zomato order leaked full",
+      "timestamp": "2024-01-15T21:14:15",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_051",
+      "sender": "Kavya",
+      "text": "COD order confirm kar liya customer ne",
+      "timestamp": "2024-01-16T09:12:00",
+      "ground_truth_label": "delivery"
+    },
+    {
+      "id": "msg_052",
+      "sender": "Kavya",
+      "text": "salad me dressing bahut salty hai",
+      "timestamp": "2024-01-16T09:34:15",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_053",
+      "sender": "Kavya",
+      "text": "address note me landmark add kar diya",
+      "timestamp": "2024-01-16T09:58:15",
+      "ground_truth_label": "delivery"
+    },
+    {
+      "id": "msg_054",
+      "sender": "Kavya",
+      "text": "sizzler plate chipped nikli yaar",
+      "timestamp": "2024-01-16T10:21:15",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_055",
+      "sender": "Meera",
+      "text": "rider reached but app pe not marked",
+      "timestamp": "2024-01-16T10:44:15",
+      "ground_truth_label": "delivery"
+    },
+    {
+      "id": "msg_056",
+      "sender": "Kavya",
+      "text": "floor pe kaun hai",
+      "timestamp": "2024-01-16T10:56:45",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_057",
+      "sender": "Kavya",
+      "text": "takeaway guest down aa gaya, parcel bhejo",
+      "timestamp": "2024-01-16T11:01:30",
+      "ground_truth_label": "delivery"
+    },
+    {
+      "id": "msg_058",
+      "sender": "Kavya",
+      "text": "sesame salad me allergen kya kya hai",
+      "timestamp": "2024-01-16T11:15:30",
+      "ground_truth_label": "menu_inquiry"
+    },
+    {
+      "id": "msg_059",
+      "sender": "Kavya",
+      "text": "order split karna pada, dessert next rider se jayega",
+      "timestamp": "2024-01-16T11:20:45",
+      "ground_truth_label": "delivery"
+    },
+    {
+      "id": "msg_060",
+      "sender": "Kavya",
+      "text": "tomorrow lunch 10 pax corporate group block karo",
+      "timestamp": "2024-01-16T11:34:15",
+      "ground_truth_label": "reservation"
+    },
+    {
+      "id": "msg_061",
+      "sender": "Amit",
+      "text": "tomorrow lunch 10 pax corporate group block karo",
+      "timestamp": "2024-01-16T11:42:15",
+      "ground_truth_label": "reservation"
+    },
+    {
+      "id": "msg_062",
+      "sender": "Saurabh",
+      "text": "parcel hold pe rakho, customer stuck in traffic",
+      "timestamp": "2024-01-16T11:50:00",
+      "ground_truth_label": "delivery"
+    },
+    {
+      "id": "msg_063",
+      "sender": "Rohan",
+      "text": "fries limp ho gaye delivery tak",
+      "timestamp": "2024-01-16T12:04:45",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_064",
+      "sender": "Saurabh",
+      "text": "kids meal with fries still same combo hai?",
+      "timestamp": "2024-01-16T12:24:00",
+      "ground_truth_label": "menu_inquiry"
+    },
+    {
+      "id": "msg_065",
+      "sender": "Vikas",
+      "text": "brownie with ice cream abhi available?",
+      "timestamp": "2024-01-16T12:32:15",
+      "ground_truth_label": "menu_inquiry"
+    },
+    {
+      "id": "msg_066",
+      "sender": "Vikas",
+      "text": "which branch",
+      "timestamp": "2024-01-16T12:50:30",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_067",
+      "sender": "Vikas",
+      "text": "late aayenge maybe, table release mat karna early",
+      "timestamp": "2024-01-16T13:16:45",
+      "ground_truth_label": "reservation"
+    },
+    {
+      "id": "msg_068",
+      "sender": "Vikas",
+      "text": "chef special me aaj kya chal raha",
+      "timestamp": "2024-01-16T13:44:45",
+      "ground_truth_label": "menu_inquiry"
+    },
+    {
+      "id": "msg_069",
+      "sender": "Vikas",
+      "text": "couple wants quieter area, music side nahi",
+      "timestamp": "2024-01-16T14:01:45",
+      "ground_truth_label": "reservation"
+    },
+    {
+      "id": "msg_070",
+      "sender": "Vikas",
+      "text": "customer bas pooch raha, order confirm nahi hua abhi",
+      "timestamp": "2024-01-16T14:08:45",
+      "ground_truth_label": "menu_inquiry"
+    },
+    {
+      "id": "msg_071",
+      "sender": "Vikas",
+      "text": "outdoor seat possible if weather thik raha",
+      "timestamp": "2024-01-16T14:33:15",
+      "ground_truth_label": "reservation"
+    },
+    {
+      "id": "msg_072",
+      "sender": "Priya",
+      "text": "late aayenge maybe, table release mat karna early",
+      "timestamp": "2024-01-16T15:02:00",
+      "ground_truth_label": "reservation"
+    },
+    {
+      "id": "msg_073",
+      "sender": "Arjun",
+      "text": "name Aarav family, 3 adults 2 kids",
+      "timestamp": "2024-01-16T15:16:00",
+      "ground_truth_label": "reservation"
+    },
+    {
+      "id": "msg_074",
+      "sender": "Priya",
+      "text": "one rider do orders le gaya, both mark karna",
+      "timestamp": "2024-01-16T15:44:30",
+      "ground_truth_label": "delivery"
+    },
+    {
+      "id": "msg_075",
+      "sender": "Priya",
+      "text": "be on time",
+      "timestamp": "2024-01-16T15:47:45",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_076",
+      "sender": "Priya",
+      "text": "reservation me stroller space bhi chahiye",
+      "timestamp": "2024-01-16T16:07:45",
+      "ground_truth_label": "reservation"
+    },
+    {
+      "id": "msg_077",
+      "sender": "Priya",
+      "text": "family pack ready by 7:10 please",
+      "timestamp": "2024-01-16T16:25:00",
+      "ground_truth_label": "delivery"
+    },
+    {
+      "id": "msg_078",
+      "sender": "Dev",
+      "text": "same gravy me mushroom add kar sakte?",
+      "timestamp": "2024-01-16T16:49:15",
+      "ground_truth_label": "menu_inquiry"
+    },
+    {
+      "id": "msg_079",
+      "sender": "Pooja",
+      "text": "replacement dessert complimentary ke saath bhejna",
+      "timestamp": "2024-01-16T17:10:45",
+      "ground_truth_label": "delivery"
+    },
+    {
+      "id": "msg_080",
+      "sender": "Pooja",
+      "text": "store se branch transfer wala cake nikal gaya",
+      "timestamp": "2024-01-16T17:34:00",
+      "ground_truth_label": "delivery"
+    },
+    {
+      "id": "msg_081",
+      "sender": "Pooja",
+      "text": "store se branch transfer wala cake nikal gaya",
+      "timestamp": "2024-01-16T17:40:00",
+      "ground_truth_label": "delivery"
+    },
+    {
+      "id": "msg_082",
+      "sender": "Pooja",
+      "text": "pesto pasta me nuts hai na exactly",
+      "timestamp": "2024-01-16T17:58:00",
+      "ground_truth_label": "menu_inquiry"
+    },
+    {
+      "id": "msg_083",
+      "sender": "Vikas",
+      "text": "sesame salad me allergen kya kya hai",
+      "timestamp": "2024-01-16T18:20:45",
+      "ground_truth_label": "menu_inquiry"
+    },
+    {
+      "id": "msg_084",
+      "sender": "Vikas",
+      "text": "pin new menu pdf please",
+      "timestamp": "2024-01-16T18:34:30",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_085",
+      "sender": "Pooja",
+      "text": "same complaint repeat hui after replacement",
+      "timestamp": "2024-01-16T18:44:30",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_086",
+      "sender": "Amit",
+      "text": "vegan dessert me aaj kya ready hai",
+      "timestamp": "2024-01-16T19:08:00",
+      "ground_truth_label": "menu_inquiry"
+    },
+    {
+      "id": "msg_087",
+      "sender": "Rohan",
+      "text": "extra chutney add karke reseal kar do",
+      "timestamp": "2024-01-16T19:33:15",
+      "ground_truth_label": "delivery"
+    },
+    {
+      "id": "msg_088",
+      "sender": "Dev",
+      "text": "anniversary couple wants corner if possible",
+      "timestamp": "2024-01-16T19:56:45",
+      "ground_truth_label": "reservation"
+    },
+    {
+      "id": "msg_089",
+      "sender": "Kavya",
+      "text": "biryani combo me raita included hai ya extra",
+      "timestamp": "2024-01-16T20:02:45",
+      "ground_truth_label": "menu_inquiry"
+    },
+    {
+      "id": "msg_090",
+      "sender": "Kavya",
+      "text": "butter chicken half portion milta hai kya",
+      "timestamp": "2024-01-16T20:06:45",
+      "ground_truth_label": "menu_inquiry"
+    },
+    {
+      "id": "msg_091",
+      "sender": "Nidhi",
+      "text": "ac bahut thanda near table 14",
+      "timestamp": "2024-01-16T20:19:15",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_092",
+      "sender": "Nidhi",
+      "text": "extra chutney add karke reseal kar do",
+      "timestamp": "2024-01-16T20:25:15",
+      "ground_truth_label": "delivery"
+    },
+    {
+      "id": "msg_093",
+      "sender": "Nidhi",
+      "text": "hot and sour soup less pepper chahiye",
+      "timestamp": "2024-01-16T20:36:00",
+      "ground_truth_label": "menu_inquiry"
+    },
+    {
+      "id": "msg_094",
+      "sender": "Nidhi",
+      "text": "same gravy me mushroom add kar sakte?",
+      "timestamp": "2024-01-16T20:43:30",
+      "ground_truth_label": "menu_inquiry"
+    },
+    {
+      "id": "msg_095",
+      "sender": "Nidhi",
+      "text": "name Aarav family, 3 adults 2 kids",
+      "timestamp": "2024-01-16T21:00:45",
+      "ground_truth_label": "reservation"
+    },
+    {
+      "id": "msg_096",
+      "sender": "Manish",
+      "text": "hold 2 min",
+      "timestamp": "2024-01-16T21:25:30",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_097",
+      "sender": "Manish",
+      "text": "mat bhoolna bas",
+      "timestamp": "2024-01-16T21:42:15",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_098",
+      "sender": "Manish",
+      "text": "late aayenge maybe, table release mat karna early",
+      "timestamp": "2024-01-16T21:26:00",
+      "ground_truth_label": "reservation"
+    },
+    {
+      "id": "msg_099",
+      "sender": "Manish",
+      "text": "chef special me aaj kya chal raha",
+      "timestamp": "2024-01-16T21:44:45",
+      "ground_truth_label": "menu_inquiry"
+    },
+    {
+      "id": "msg_100",
+      "sender": "Saurabh",
+      "text": "dessert melted pahunch gaya",
+      "timestamp": "2024-01-16T21:02:30",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_101",
+      "sender": "Saurabh",
+      "text": "booking confirm hai but phone unreachable ab",
+      "timestamp": "2024-01-17T09:08:00",
+      "ground_truth_label": "reservation"
+    },
+    {
+      "id": "msg_102",
+      "sender": "Neha",
+      "text": "kal remind karna",
+      "timestamp": "2024-01-17T09:17:30",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_103",
+      "sender": "Arjun",
+      "text": "delivery lane me traffic jam, eta push karo",
+      "timestamp": "2024-01-17T09:34:30",
+      "ground_truth_label": "delivery"
+    },
+    {
+      "id": "msg_104",
+      "sender": "Saurabh",
+      "text": "direct phone order hai, app wala nahi",
+      "timestamp": "2024-01-17T09:48:30",
+      "ground_truth_label": "delivery"
+    },
+    {
+      "id": "msg_105",
+      "sender": "Dev",
+      "text": "host ko bolo balloons minimal rakhna",
+      "timestamp": "2024-01-17T10:12:45",
+      "ground_truth_label": "reservation"
+    },
+    {
+      "id": "msg_106",
+      "sender": "Dev",
+      "text": "customer asking eta again, exact bolo",
+      "timestamp": "2024-01-17T10:33:00",
+      "ground_truth_label": "delivery"
+    },
+    {
+      "id": "msg_107",
+      "sender": "Karan",
+      "text": "couple wants quieter area, music side nahi",
+      "timestamp": "2024-01-17T10:37:30",
+      "ground_truth_label": "reservation"
+    },
+    {
+      "id": "msg_108",
+      "sender": "Karan",
+      "text": "delivery boy calling from gate again",
+      "timestamp": "2024-01-17T10:48:30",
+      "ground_truth_label": "delivery"
+    },
+    {
+      "id": "msg_109",
+      "sender": "Sneha",
+      "text": "callback promise kiya tha, still pending",
+      "timestamp": "2024-01-17T10:55:00",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_110",
+      "sender": "Pooja",
+      "text": "which branch",
+      "timestamp": "2024-01-17T11:00:00",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_111",
+      "sender": "Dev",
+      "text": "delay hua 35 min, callback please",
+      "timestamp": "2024-01-17T11:23:45",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_112",
+      "sender": "Pooja",
+      "text": "paneer tikka platter me mint dip alag bhej sakte?",
+      "timestamp": "2024-01-17T11:26:45",
+      "ground_truth_label": "menu_inquiry"
+    },
+    {
+      "id": "msg_113",
+      "sender": "Rahul",
+      "text": "thai curry ke saath jasmine rice hi aata na",
+      "timestamp": "2024-01-17T11:55:00",
+      "ground_truth_label": "menu_inquiry"
+    },
+    {
+      "id": "msg_114",
+      "sender": "Rahul",
+      "text": "host ko bolo balloons minimal rakhna",
+      "timestamp": "2024-01-17T12:05:00",
+      "ground_truth_label": "reservation"
+    },
+    {
+      "id": "msg_115",
+      "sender": "Rahul",
+      "text": "waitlist pe dalo if no show ho",
+      "timestamp": "2024-01-17T12:33:45",
+      "ground_truth_label": "reservation"
+    },
+    {
+      "id": "msg_116",
+      "sender": "Rahul",
+      "text": "paneer chewy bol diya table 9 ne",
+      "timestamp": "2024-01-17T12:42:45",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_117",
+      "sender": "Rohan",
+      "text": "hold 2 min",
+      "timestamp": "2024-01-17T13:10:30",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_118",
+      "sender": "Rohan",
+      "text": "kal remind karna",
+      "timestamp": "2024-01-17T13:20:15",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_119",
+      "sender": "Karan",
+      "text": "breakfast platter 11 ke baad bhi milta?",
+      "timestamp": "2024-01-17T13:29:15",
+      "ground_truth_label": "menu_inquiry"
+    },
+    {
+      "id": "msg_120",
+      "sender": "Karan",
+      "text": "chef se confirm karo",
+      "timestamp": "2024-01-17T13:42:15",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_121",
+      "sender": "Karan",
+      "text": "ac bahut thanda near table 14",
+      "timestamp": "2024-01-17T14:11:00",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_122",
+      "sender": "Dev",
+      "text": "sticker pe name wrong tha, fix kar diya",
+      "timestamp": "2024-01-17T14:14:15",
+      "ground_truth_label": "delivery"
+    },
+    {
+      "id": "msg_123",
+      "sender": "Dev",
+      "text": "window seat chahiye but walkin jaisa scene hai",
+      "timestamp": "2024-01-17T14:21:15",
+      "ground_truth_label": "reservation"
+    },
+    {
+      "id": "msg_124",
+      "sender": "Dev",
+      "text": "takeaway counter pe 3 orders queue me hai",
+      "timestamp": "2024-01-17T14:41:30",
+      "ground_truth_label": "delivery"
+    },
+    {
+      "id": "msg_125",
+      "sender": "Dev",
+      "text": "thai curry ke saath jasmine rice hi aata na",
+      "timestamp": "2024-01-17T15:09:30",
+      "ground_truth_label": "menu_inquiry"
+    },
+    {
+      "id": "msg_126",
+      "sender": "Amit",
+      "text": "sent above",
+      "timestamp": "2024-01-17T15:15:30",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_127",
+      "sender": "Ishita",
+      "text": "biryani combo me raita included hai ya extra",
+      "timestamp": "2024-01-17T15:22:30",
+      "ground_truth_label": "menu_inquiry"
+    },
+    {
+      "id": "msg_128",
+      "sender": "Karan",
+      "text": "sizzler plate chipped nikli yaar",
+      "timestamp": "2024-01-17T15:36:30",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_129",
+      "sender": "Karan",
+      "text": "combo same hai ya price ke saath side change hua",
+      "timestamp": "2024-01-17T15:57:45",
+      "ground_truth_label": "menu_inquiry"
+    },
+    {
+      "id": "msg_130",
+      "sender": "Karan",
+      "text": "token print ho gaya but kitchen slip missing thi",
+      "timestamp": "2024-01-17T16:00:45",
+      "ground_truth_label": "delivery"
+    },
+    {
+      "id": "msg_131",
+      "sender": "Karan",
+      "text": "hakka noodles less spicy kar sakte?",
+      "timestamp": "2024-01-17T16:11:45",
+      "ground_truth_label": "menu_inquiry"
+    },
+    {
+      "id": "msg_132",
+      "sender": "Dev",
+      "text": "delivered late but accepted",
+      "timestamp": "2024-01-17T16:19:15",
+      "ground_truth_label": "delivery"
+    },
+    {
+      "id": "msg_133",
+      "sender": "Ishita",
+      "text": "soup cold gaya again",
+      "timestamp": "2024-01-17T16:38:15",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_134",
+      "sender": "Ishita",
+      "text": "delivery boy calling from gate again",
+      "timestamp": "2024-01-17T17:04:15",
+      "ground_truth_label": "delivery"
+    },
+    {
+      "id": "msg_135",
+      "sender": "Ishita",
+      "text": "replacement dessert complimentary ke saath bhejna",
+      "timestamp": "2024-01-17T17:22:45",
+      "ground_truth_label": "delivery"
+    },
+    {
+      "id": "msg_136",
+      "sender": "Rahul",
+      "text": "delivery rider waiting and order still not packed",
+      "timestamp": "2024-01-17T17:50:00",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_137",
+      "sender": "Sneha",
+      "text": "two birthdays overlap ho rahe, slot manage karo",
+      "timestamp": "2024-01-17T18:09:45",
+      "ground_truth_label": "reservation"
+    },
+    {
+      "id": "msg_138",
+      "sender": "Karan",
+      "text": "jain gravy for paneer lababdar doable?",
+      "timestamp": "2024-01-17T18:16:15",
+      "ground_truth_label": "menu_inquiry"
+    },
+    {
+      "id": "msg_139",
+      "sender": "Karan",
+      "text": "paneer chewy bol diya table 9 ne",
+      "timestamp": "2024-01-17T18:35:15",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_140",
+      "sender": "Karan",
+      "text": "plate edge cracked tha, lucky bach gaye",
+      "timestamp": "2024-01-17T18:57:15",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_141",
+      "sender": "Nidhi",
+      "text": "rain ki wajah se outer route slow hai",
+      "timestamp": "2024-01-17T19:24:00",
+      "ground_truth_label": "delivery"
+    },
+    {
+      "id": "msg_142",
+      "sender": "Karan",
+      "text": "plate edge cracked tha, lucky bach gaye",
+      "timestamp": "2024-01-17T19:36:30",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_143",
+      "sender": "Nidhi",
+      "text": "bill stapled hai but spoon pack missing check karo",
+      "timestamp": "2024-01-17T19:59:30",
+      "ground_truth_label": "delivery"
+    },
+    {
+      "id": "msg_144",
+      "sender": "Nidhi",
+      "text": "dal makhani without cream possible?",
+      "timestamp": "2024-01-17T20:04:00",
+      "ground_truth_label": "menu_inquiry"
+    },
+    {
+      "id": "msg_145",
+      "sender": "Pooja",
+      "text": "customer pickup 10 min me pohchega",
+      "timestamp": "2024-01-17T20:19:30",
+      "ground_truth_label": "delivery"
+    },
+    {
+      "id": "msg_146",
+      "sender": "Pooja",
+      "text": "delivered late but accepted",
+      "timestamp": "2024-01-17T20:43:30",
+      "ground_truth_label": "delivery"
+    },
+    {
+      "id": "msg_147",
+      "sender": "Pooja",
+      "text": "reservation me stroller space bhi chahiye",
+      "timestamp": "2024-01-17T21:02:00",
+      "ground_truth_label": "reservation"
+    },
+    {
+      "id": "msg_148",
+      "sender": "Pooja",
+      "text": "delivery rider waiting and order still not packed",
+      "timestamp": "2024-01-17T21:07:00",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_149",
+      "sender": "Pooja",
+      "text": "store se branch transfer wala cake nikal gaya",
+      "timestamp": "2024-01-17T21:20:45",
+      "ground_truth_label": "delivery"
+    },
+    {
+      "id": "msg_150",
+      "sender": "Pooja",
+      "text": "sheet update karo",
+      "timestamp": "2024-01-17T21:27:45",
+      "ground_truth_label": "general"
+    }
+  ]
+}

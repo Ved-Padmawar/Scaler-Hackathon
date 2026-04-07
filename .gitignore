@@ -1,0 +1,38 @@
+# Environment variables and secrets
+.env
+.env.*
+docs/hf_token.txt
+
+# Scratch/notes files
+docs/
+1.txt
+1.md
+image.png
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+*.egg-info/
+dist/
+build/
+
+# Poetry
+# Keep poetry.lock (needed for reproducibility)
+
+# uv
+# Keep uv.lock (needed for Docker build)
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test/local artifacts
+*.log

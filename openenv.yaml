@@ -1,0 +1,87 @@
+name: business-chat-env
+version: "1.0.0"
+description: >
+  An OpenEnv environment that trains and evaluates AI agents on real-world business
+  chat group analysis. Agents learn to classify messages, discover topic clusters,
+  and generate highly tailored prompt templates for specific business contexts.
+author: Scaler Hackathon
+tags:
+  - openenv
+  - business
+  - nlp
+  - classification
+  - clustering
+  - prompt-engineering
+
+tasks:
+  - id: classify
+    name: Message Classification
+    difficulty: easy
+    description: >
+      Classify each message in a business chat group into one of the provided
+      labels (e.g. product_inquiry, pricing, complaint, order_update, general).
+    max_steps: 3
+    reward_range: [0.0, 1.0]
+
+  - id: cluster
+    name: Topic Clustering
+    difficulty: medium
+    description: >
+      Without any predefined labels, group messages into meaningful topic clusters
+      and assign descriptive human-readable names to each cluster.
+    max_steps: 3
+    reward_range: [0.0, 1.0]
+
+  - id: prompt_gen
+    name: Business Prompt Generation
+    difficulty: hard
+    description: >
+      Analyze a business chat group's conversation patterns and generate a highly
+      tailored prompt template that an LLM can use to process future messages
+      from that specific business context.
+    max_steps: 3
+    reward_range: [0.0, 1.0]
+
+observation_space:
+  type: object
+  fields:
+    business_context:
+      type: object
+      description: Business name, type, group name, and description
+    messages:
+      type: array
+      description: List of chat messages with id, sender, text, timestamp
+    task_type:
+      type: string
+      enum: [classify, cluster, prompt_gen]
+    available_labels:
+      type: array
+      description: Label options (only for classify task)
+    instructions:
+      type: string
+      description: Task-specific instructions for the agent
+    step:
+      type: integer
+      description: Current step number within the episode (0-indexed)
+
+action_space:
+  type: object
+  fields:
+    task_type:
+      type: string
+      enum: [classify, cluster, prompt_gen]
+    classify_action:
+      type: object
+      description: "Map of message_id -> label (for classify task)"
+    cluster_action:
+      type: object
+      description: "Cluster assignments and labels (for cluster task)"
+    prompt_gen_action:
+      type: object
+      description: "Generated prompt template, reasoning, topics (for prompt_gen task)"
+
+endpoints:
+  reset: POST /reset
+  step: POST /step
+  state: GET /state
+  health: GET /health

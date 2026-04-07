@@ -1,0 +1,1065 @@
+{
+  "business_name": "UrbanNest Realty",
+  "business_type": "real_estate",
+  "group_name": "Sales & Closures",
+  "description": "A messy WhatsApp-style sales group for UrbanNest Realty with interleaved property questions, negotiations, visit coordination, legal document clarifications, and short ambiguous follow-ups.",
+  "available_labels": [
+    "property_inquiry",
+    "pricing",
+    "site_visit",
+    "legal_docs",
+    "general"
+  ],
+  "messages": [
+    {
+      "id": "msg_001",
+      "sender": "Manish",
+      "text": "tower c side bigger balcony wala available?",
+      "timestamp": "2024-01-15T09:05:00",
+      "ground_truth_label": "property_inquiry"
+    },
+    {
+      "id": "msg_002",
+      "sender": "Karan",
+      "text": "lock in period before resale kuch hai?",
+      "timestamp": "2024-01-15T09:22:30",
+      "ground_truth_label": "legal_docs"
+    },
+    {
+      "id": "msg_003",
+      "sender": "Karan",
+      "text": "weekend rush hoga, slot block kar lo",
+      "timestamp": "2024-01-15T09:47:15",
+      "ground_truth_label": "site_visit"
+    },
+    {
+      "id": "msg_004",
+      "sender": "Karan",
+      "text": "old rate mat share karo please",
+      "timestamp": "2024-01-15T10:01:15",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_005",
+      "sender": "Arjun",
+      "text": "loan friendly ready inventory kaunsa quick close hoga",
+      "timestamp": "2024-01-15T10:29:00",
+      "ground_truth_label": "property_inquiry"
+    },
+    {
+      "id": "msg_006",
+      "sender": "Ishita",
+      "text": "legal charges fixed hain ya project wise",
+      "timestamp": "2024-01-15T10:52:45",
+      "ground_truth_label": "legal_docs"
+    },
+    {
+      "id": "msg_007",
+      "sender": "Ishita",
+      "text": "khata transfer builder karega ya buyer",
+      "timestamp": "2024-01-15T11:00:45",
+      "ground_truth_label": "legal_docs"
+    },
+    {
+      "id": "msg_008",
+      "sender": "Neha",
+      "text": "broker callback since morning waiting",
+      "timestamp": "2024-01-15T11:17:30",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_009",
+      "sender": "Neha",
+      "text": "sir wants headline num only, breakup baad me",
+      "timestamp": "2024-01-15T11:21:30",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_010",
+      "sender": "Neha",
+      "text": "agreement draft me cancellation clause kahan hai",
+      "timestamp": "2024-01-15T11:40:30",
+      "ground_truth_label": "legal_docs"
+    },
+    {
+      "id": "msg_011",
+      "sender": "Neha",
+      "text": "coffee machine down again",
+      "timestamp": "2024-01-15T11:52:30",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_012",
+      "sender": "Neha",
+      "text": "all incl me clubhouse waive nahi hoga na",
+      "timestamp": "2024-01-15T12:00:45",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_013",
+      "sender": "Neha",
+      "text": "client bas shortlist bana raha, final nahi",
+      "timestamp": "2024-01-15T12:25:45",
+      "ground_truth_label": "property_inquiry"
+    },
+    {
+      "id": "msg_014",
+      "sender": "Pooja",
+      "text": "commercial unit pe fitout credit mil sakta?",
+      "timestamp": "2024-01-15T12:40:30",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_015",
+      "sender": "Pooja",
+      "text": "blue brochure wala unit sold ya hold?",
+      "timestamp": "2024-01-15T12:52:30",
+      "ground_truth_label": "property_inquiry"
+    },
+    {
+      "id": "msg_016",
+      "sender": "Pooja",
+      "text": "investor ko smallest ticket size unit dikhana hai",
+      "timestamp": "2024-01-15T13:03:30",
+      "ground_truth_label": "property_inquiry"
+    },
+    {
+      "id": "msg_017",
+      "sender": "Priya",
+      "text": "customer ko east facing hi chahiye, kuch open hai?",
+      "timestamp": "2024-01-15T13:27:15",
+      "ground_truth_label": "property_inquiry"
+    },
+    {
+      "id": "msg_018",
+      "sender": "Priya",
+      "text": "clause number chahiye, generic answer nahi",
+      "timestamp": "2024-01-15T13:38:15",
+      "ground_truth_label": "legal_docs"
+    },
+    {
+      "id": "msg_019",
+      "sender": "Priya",
+      "text": "1.42 cr if token today close karu?",
+      "timestamp": "2024-01-15T14:01:30",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_020",
+      "sender": "Nidhi",
+      "text": "channel partner waiting, crisp number bhejo",
+      "timestamp": "2024-01-15T14:24:15",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_021",
+      "sender": "Pooja",
+      "text": "1.42 cr if token today close karu?",
+      "timestamp": "2024-01-15T14:30:00",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_022",
+      "sender": "Pooja",
+      "text": "not clear yaar",
+      "timestamp": "2024-01-15T14:53:00",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_023",
+      "sender": "Rohan",
+      "text": "same as last month possible ya cost badh gayi",
+      "timestamp": "2024-01-15T15:14:45",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_024",
+      "sender": "Dev",
+      "text": "old release me jo tha us jaisa kuch aur hai?",
+      "timestamp": "2024-01-15T15:21:45",
+      "ground_truth_label": "property_inquiry"
+    },
+    {
+      "id": "msg_025",
+      "sender": "Rohan",
+      "text": "hold 2 min",
+      "timestamp": "2024-01-15T15:46:30",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_026",
+      "sender": "Sneha",
+      "text": "metro gate 2 pickup hi rahega na",
+      "timestamp": "2024-01-15T16:13:15",
+      "ground_truth_label": "site_visit"
+    },
+    {
+      "id": "msg_027",
+      "sender": "Sneha",
+      "text": "possession letter aur handover letter same nahi na",
+      "timestamp": "2024-01-15T16:27:00",
+      "ground_truth_label": "legal_docs"
+    },
+    {
+      "id": "msg_028",
+      "sender": "Rahul",
+      "text": "broker plus client dono aa rahe same car",
+      "timestamp": "2024-01-15T16:31:00",
+      "ground_truth_label": "site_visit"
+    },
+    {
+      "id": "msg_029",
+      "sender": "Rahul",
+      "text": "broker asking commercial studio ready piece",
+      "timestamp": "2024-01-15T16:36:00",
+      "ground_truth_label": "property_inquiry"
+    },
+    {
+      "id": "msg_030",
+      "sender": "Meera",
+      "text": "tower c side bigger balcony wala available?",
+      "timestamp": "2024-01-15T16:59:45",
+      "ground_truth_label": "property_inquiry"
+    },
+    {
+      "id": "msg_031",
+      "sender": "Amit",
+      "text": "sunset ke baad tower lighting on hona chahiye",
+      "timestamp": "2024-01-15T17:10:45",
+      "ground_truth_label": "site_visit"
+    },
+    {
+      "id": "msg_032",
+      "sender": "Karan",
+      "text": "send on group",
+      "timestamp": "2024-01-15T17:38:30",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_033",
+      "sender": "Karan",
+      "text": "same stack me lower floor option bhi hai kya",
+      "timestamp": "2024-01-15T17:55:15",
+      "ground_truth_label": "property_inquiry"
+    },
+    {
+      "id": "msg_034",
+      "sender": "Karan",
+      "text": "plot plus corner premium same sheet me dalo",
+      "timestamp": "2024-01-15T18:18:15",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_035",
+      "sender": "Karan",
+      "text": "virtual call ke waqt balcony noise avoid karna",
+      "timestamp": "2024-01-15T18:37:00",
+      "ground_truth_label": "site_visit"
+    },
+    {
+      "id": "msg_036",
+      "sender": "Karan",
+      "text": "pool view ke paas noise zyada hota kya",
+      "timestamp": "2024-01-15T18:49:15",
+      "ground_truth_label": "property_inquiry"
+    },
+    {
+      "id": "msg_037",
+      "sender": "Karan",
+      "text": "broker plus client dono aa rahe same car",
+      "timestamp": "2024-01-15T19:07:15",
+      "ground_truth_label": "site_visit"
+    },
+    {
+      "id": "msg_038",
+      "sender": "Kavya",
+      "text": "who has new brochure stack",
+      "timestamp": "2024-01-15T19:35:45",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_039",
+      "sender": "Kavya",
+      "text": "2 adjacent plots bulk booking best kya doge",
+      "timestamp": "2024-01-15T19:48:15",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_040",
+      "sender": "Kavya",
+      "text": "golf cart battery charged hai?",
+      "timestamp": "2024-01-15T19:53:15",
+      "ground_truth_label": "site_visit"
+    },
+    {
+      "id": "msg_041",
+      "sender": "Pooja",
+      "text": "2 adjacent plots bulk booking best kya doge",
+      "timestamp": "2024-01-15T20:01:45",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_042",
+      "sender": "Kavya",
+      "text": "investor ko smallest ticket size unit dikhana hai",
+      "timestamp": "2024-01-15T20:18:15",
+      "ground_truth_label": "property_inquiry"
+    },
+    {
+      "id": "msg_043",
+      "sender": "Kavya",
+      "text": "visit done, amenities pasand but balcony small lagi",
+      "timestamp": "2024-01-15T20:35:15",
+      "ground_truth_label": "site_visit"
+    },
+    {
+      "id": "msg_044",
+      "sender": "Kavya",
+      "text": "client comparing resale, price push chahiye",
+      "timestamp": "2024-01-15T20:49:00",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_045",
+      "sender": "Ishita",
+      "text": "title clear line customer ko kaise phrase karein",
+      "timestamp": "2024-01-15T20:56:15",
+      "ground_truth_label": "legal_docs"
+    },
+    {
+      "id": "msg_046",
+      "sender": "Neha",
+      "text": "brochure rates old hain, fresh sheet bhejo",
+      "timestamp": "2024-01-15T21:21:30",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_047",
+      "sender": "Kavya",
+      "text": "investor ko BSP only chahiye, taxes baad me",
+      "timestamp": "2024-01-15T21:47:45",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_048",
+      "sender": "Neha",
+      "text": "premium tower only ya normal me bhi mil jayega",
+      "timestamp": "2024-01-15T21:23:00",
+      "ground_truth_label": "property_inquiry"
+    },
+    {
+      "id": "msg_049",
+      "sender": "Neha",
+      "text": "3.5 lakh aur niche ja sakta if token now",
+      "timestamp": "2024-01-15T21:36:00",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_050",
+      "sender": "Neha",
+      "text": "walkin count high lag raha, extra staff chahiye",
+      "timestamp": "2024-01-15T21:53:00",
+      "ground_truth_label": "site_visit"
+    },
+    {
+      "id": "msg_051",
+      "sender": "Neha",
+      "text": "joint registration me dono present zaruri?",
+      "timestamp": "2024-01-16T09:12:00",
+      "ground_truth_label": "legal_docs"
+    },
+    {
+      "id": "msg_052",
+      "sender": "Dev",
+      "text": "ok checking",
+      "timestamp": "2024-01-16T09:23:30",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_053",
+      "sender": "Dev",
+      "text": "south open unit bacha ho to useful hoga",
+      "timestamp": "2024-01-16T09:33:30",
+      "ground_truth_label": "property_inquiry"
+    },
+    {
+      "id": "msg_054",
+      "sender": "Dev",
+      "text": "bulk enquiry hai, margin bach raha kya",
+      "timestamp": "2024-01-16T09:39:30",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_055",
+      "sender": "Rahul",
+      "text": "builder buyer agreement sample share kar sakte?",
+      "timestamp": "2024-01-16T09:52:00",
+      "ground_truth_label": "legal_docs"
+    },
+    {
+      "id": "msg_056",
+      "sender": "Rahul",
+      "text": "site visit 4 pm Arora family confirmed",
+      "timestamp": "2024-01-16T10:14:30",
+      "ground_truth_label": "site_visit"
+    },
+    {
+      "id": "msg_057",
+      "sender": "Priya",
+      "text": "closing ke liye one last nudge possible?",
+      "timestamp": "2024-01-16T10:24:30",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_058",
+      "sender": "Priya",
+      "text": "3 bhk plus servant lower floor left?",
+      "timestamp": "2024-01-16T10:38:15",
+      "ground_truth_label": "property_inquiry"
+    },
+    {
+      "id": "msg_059",
+      "sender": "Priya",
+      "text": "3 bhk plus servant lower floor left?",
+      "timestamp": "2024-01-16T11:04:30",
+      "ground_truth_label": "property_inquiry"
+    },
+    {
+      "id": "msg_060",
+      "sender": "Pooja",
+      "text": "NOC for bank loan kitne din me milta hai",
+      "timestamp": "2024-01-16T11:13:30",
+      "ground_truth_label": "legal_docs"
+    },
+    {
+      "id": "msg_061",
+      "sender": "Pooja",
+      "text": "tower d pre launch rate asap",
+      "timestamp": "2024-01-16T11:32:15",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_062",
+      "sender": "Anita",
+      "text": "maintenance deposit include karke bheju?",
+      "timestamp": "2024-01-16T11:49:45",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_063",
+      "sender": "Manish",
+      "text": "sunset ke baad tower lighting on hona chahiye",
+      "timestamp": "2024-01-16T12:02:15",
+      "ground_truth_label": "site_visit"
+    },
+    {
+      "id": "msg_064",
+      "sender": "Manish",
+      "text": "co working block ke paas unit hai?",
+      "timestamp": "2024-01-16T12:05:15",
+      "ground_truth_label": "property_inquiry"
+    },
+    {
+      "id": "msg_065",
+      "sender": "Meera",
+      "text": "token refund clause exact kya hai",
+      "timestamp": "2024-01-16T12:21:00",
+      "ground_truth_label": "legal_docs"
+    },
+    {
+      "id": "msg_066",
+      "sender": "Meera",
+      "text": "tower d pre launch rate asap",
+      "timestamp": "2024-01-16T12:38:00",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_067",
+      "sender": "Rahul",
+      "text": "west facing villa available hai abhi?",
+      "timestamp": "2024-01-16T12:47:45",
+      "ground_truth_label": "property_inquiry"
+    },
+    {
+      "id": "msg_068",
+      "sender": "Ishita",
+      "text": "network gaya tha",
+      "timestamp": "2024-01-16T13:01:45",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_069",
+      "sender": "Neha",
+      "text": "retail frontage better kis line me hai",
+      "timestamp": "2024-01-16T13:06:00",
+      "ground_truth_label": "property_inquiry"
+    },
+    {
+      "id": "msg_070",
+      "sender": "Neha",
+      "text": "penthouse sold out ya ek do hold pe hai",
+      "timestamp": "2024-01-16T13:24:45",
+      "ground_truth_label": "property_inquiry"
+    },
+    {
+      "id": "msg_071",
+      "sender": "Neha",
+      "text": "booking form me nominee mandatory hai kya",
+      "timestamp": "2024-01-16T13:48:15",
+      "ground_truth_label": "legal_docs"
+    },
+    {
+      "id": "msg_072",
+      "sender": "Neha",
+      "text": "client comparing resale, price push chahiye",
+      "timestamp": "2024-01-16T14:01:00",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_073",
+      "sender": "Rahul",
+      "text": "broker bol raha last project me better diya tha",
+      "timestamp": "2024-01-16T14:04:00",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_074",
+      "sender": "Rahul",
+      "text": "buggy bhi chahiye, couple with parents aa rahe",
+      "timestamp": "2024-01-16T14:20:00",
+      "ground_truth_label": "site_visit"
+    },
+    {
+      "id": "msg_075",
+      "sender": "Priya",
+      "text": "broker bol raha last project me better diya tha",
+      "timestamp": "2024-01-16T14:31:15",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_076",
+      "sender": "Neha",
+      "text": "sample flat jaisa layout kis tower me milta hai",
+      "timestamp": "2024-01-16T14:58:45",
+      "ground_truth_label": "property_inquiry"
+    },
+    {
+      "id": "msg_077",
+      "sender": "Karan",
+      "text": "visit reschedule because kid exam aa gaya",
+      "timestamp": "2024-01-16T15:12:45",
+      "ground_truth_label": "site_visit"
+    },
+    {
+      "id": "msg_078",
+      "sender": "Rohan",
+      "text": "allotment letter pe name spelling issue hai",
+      "timestamp": "2024-01-16T15:27:45",
+      "ground_truth_label": "legal_docs"
+    },
+    {
+      "id": "msg_079",
+      "sender": "Rohan",
+      "text": "who has new brochure stack",
+      "timestamp": "2024-01-16T15:49:30",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_080",
+      "sender": "Rohan",
+      "text": "visit done, amenities pasand but balcony small lagi",
+      "timestamp": "2024-01-16T15:58:45",
+      "ground_truth_label": "site_visit"
+    },
+    {
+      "id": "msg_081",
+      "sender": "Anita",
+      "text": "walk in count share after lunch",
+      "timestamp": "2024-01-16T16:19:00",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_082",
+      "sender": "Anita",
+      "text": "token refund clause exact kya hai",
+      "timestamp": "2024-01-16T16:24:30",
+      "ground_truth_label": "legal_docs"
+    },
+    {
+      "id": "msg_083",
+      "sender": "Meera",
+      "text": "doctor client ko quiet side chahiye, kya suggest karu",
+      "timestamp": "2024-01-16T16:44:00",
+      "ground_truth_label": "property_inquiry"
+    },
+    {
+      "id": "msg_084",
+      "sender": "Anita",
+      "text": "welcome kits ready rakhna",
+      "timestamp": "2024-01-16T17:11:45",
+      "ground_truth_label": "site_visit"
+    },
+    {
+      "id": "msg_085",
+      "sender": "Dev",
+      "text": "agreement draft me cancellation clause kahan hai",
+      "timestamp": "2024-01-16T17:23:30",
+      "ground_truth_label": "legal_docs"
+    },
+    {
+      "id": "msg_086",
+      "sender": "Pooja",
+      "text": "sunset ke baad tower lighting on hona chahiye",
+      "timestamp": "2024-01-16T17:48:15",
+      "ground_truth_label": "site_visit"
+    },
+    {
+      "id": "msg_087",
+      "sender": "Pooja",
+      "text": "parking free bolna risky hoga?",
+      "timestamp": "2024-01-16T17:54:15",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_088",
+      "sender": "Pooja",
+      "text": "maintenance deposit refundable hota?",
+      "timestamp": "2024-01-16T18:00:45",
+      "ground_truth_label": "legal_docs"
+    },
+    {
+      "id": "msg_089",
+      "sender": "Pooja",
+      "text": "legal charges fixed hain ya project wise",
+      "timestamp": "2024-01-16T18:15:00",
+      "ground_truth_label": "legal_docs"
+    },
+    {
+      "id": "msg_090",
+      "sender": "Pooja",
+      "text": "ok checking",
+      "timestamp": "2024-01-16T18:35:15",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_091",
+      "sender": "Anita",
+      "text": "hold kis naam pe hai exactly",
+      "timestamp": "2024-01-16T19:02:15",
+      "ground_truth_label": "property_inquiry"
+    },
+    {
+      "id": "msg_092",
+      "sender": "Anita",
+      "text": "same stack me lower floor option bhi hai kya",
+      "timestamp": "2024-01-16T19:12:00",
+      "ground_truth_label": "property_inquiry"
+    },
+    {
+      "id": "msg_093",
+      "sender": "Anita",
+      "text": "pool view ke paas noise zyada hota kya",
+      "timestamp": "2024-01-16T19:31:30",
+      "ground_truth_label": "property_inquiry"
+    },
+    {
+      "id": "msg_094",
+      "sender": "Kavya",
+      "text": "garden facing duplex final release me hai kya",
+      "timestamp": "2024-01-16T19:50:30",
+      "ground_truth_label": "property_inquiry"
+    },
+    {
+      "id": "msg_095",
+      "sender": "Priya",
+      "text": "GST under construction commercial pe lagta na",
+      "timestamp": "2024-01-16T19:54:30",
+      "ground_truth_label": "legal_docs"
+    },
+    {
+      "id": "msg_096",
+      "sender": "Priya",
+      "text": "power of attorney copy enough hogi for booking?",
+      "timestamp": "2024-01-16T20:01:45",
+      "ground_truth_label": "legal_docs"
+    },
+    {
+      "id": "msg_097",
+      "sender": "Arjun",
+      "text": "title clear line customer ko kaise phrase karein",
+      "timestamp": "2024-01-16T20:30:15",
+      "ground_truth_label": "legal_docs"
+    },
+    {
+      "id": "msg_098",
+      "sender": "Ishita",
+      "text": "sample flat jaisa layout kis tower me milta hai",
+      "timestamp": "2024-01-16T20:49:45",
+      "ground_truth_label": "property_inquiry"
+    },
+    {
+      "id": "msg_099",
+      "sender": "Rohan",
+      "text": "phase 2 me park facing 3 bhk mila to batao",
+      "timestamp": "2024-01-16T20:57:30",
+      "ground_truth_label": "property_inquiry"
+    },
+    {
+      "id": "msg_100",
+      "sender": "Ishita",
+      "text": "blocked units list EOD bhejna",
+      "timestamp": "2024-01-16T21:16:30",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_101",
+      "sender": "Rohan",
+      "text": "send on group",
+      "timestamp": "2024-01-17T09:08:00",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_102",
+      "sender": "Arjun",
+      "text": "sunset ke baad tower lighting on hona chahiye",
+      "timestamp": "2024-01-17T09:21:45",
+      "ground_truth_label": "site_visit"
+    },
+    {
+      "id": "msg_103",
+      "sender": "Pooja",
+      "text": "plot plus corner premium same sheet me dalo",
+      "timestamp": "2024-01-17T09:34:45",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_104",
+      "sender": "Pooja",
+      "text": "cabin 3 projector not connecting",
+      "timestamp": "2024-01-17T09:50:30",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_105",
+      "sender": "Pooja",
+      "text": "discount verbal hai ya mail me de sakte",
+      "timestamp": "2024-01-17T10:16:45",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_106",
+      "sender": "Nidhi",
+      "text": "reception pe kaun hai abhi",
+      "timestamp": "2024-01-17T10:38:00",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_107",
+      "sender": "Anita",
+      "text": "sample flat keys kiske paas",
+      "timestamp": "2024-01-17T10:57:45",
+      "ground_truth_label": "site_visit"
+    },
+    {
+      "id": "msg_108",
+      "sender": "Karan",
+      "text": "west facing villa available hai abhi?",
+      "timestamp": "2024-01-17T11:18:15",
+      "ground_truth_label": "property_inquiry"
+    },
+    {
+      "id": "msg_109",
+      "sender": "Karan",
+      "text": "south open unit bacha ho to useful hoga",
+      "timestamp": "2024-01-17T11:44:00",
+      "ground_truth_label": "property_inquiry"
+    },
+    {
+      "id": "msg_110",
+      "sender": "Karan",
+      "text": "joint registration me dono present zaruri?",
+      "timestamp": "2024-01-17T11:56:30",
+      "ground_truth_label": "legal_docs"
+    },
+    {
+      "id": "msg_111",
+      "sender": "Karan",
+      "text": "sunset ke baad tower lighting on hona chahiye",
+      "timestamp": "2024-01-17T11:59:45",
+      "ground_truth_label": "site_visit"
+    },
+    {
+      "id": "msg_112",
+      "sender": "Ishita",
+      "text": "bank tie up offer add hai kya abhi",
+      "timestamp": "2024-01-17T12:12:45",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_113",
+      "sender": "Ishita",
+      "text": "discount verbal hai ya mail me de sakte",
+      "timestamp": "2024-01-17T12:29:30",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_114",
+      "sender": "Nidhi",
+      "text": "ok checking",
+      "timestamp": "2024-01-17T12:41:30",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_115",
+      "sender": "Nidhi",
+      "text": "sir ko round figure chahiye, exact nahi",
+      "timestamp": "2024-01-17T13:04:00",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_116",
+      "sender": "Nidhi",
+      "text": "done from my side",
+      "timestamp": "2024-01-17T13:15:45",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_117",
+      "sender": "Ishita",
+      "text": "family wants to see amenities first then flat",
+      "timestamp": "2024-01-17T13:36:45",
+      "ground_truth_label": "site_visit"
+    },
+    {
+      "id": "msg_118",
+      "sender": "Amit",
+      "text": "blue brochure wala unit sold ya hold?",
+      "timestamp": "2024-01-17T14:02:45",
+      "ground_truth_label": "property_inquiry"
+    },
+    {
+      "id": "msg_119",
+      "sender": "Neha",
+      "text": "RERA cert pdf share karna hai kya",
+      "timestamp": "2024-01-17T14:24:15",
+      "ground_truth_label": "legal_docs"
+    },
+    {
+      "id": "msg_120",
+      "sender": "Amit",
+      "text": "cost sheet me legal charges updated hain na",
+      "timestamp": "2024-01-17T14:33:00",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_121",
+      "sender": "Neha",
+      "text": "parking free bolna risky hoga?",
+      "timestamp": "2024-01-17T14:56:45",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_122",
+      "sender": "Amit",
+      "text": "lounge meeting ke baad direct site le jana",
+      "timestamp": "2024-01-17T15:24:15",
+      "ground_truth_label": "site_visit"
+    },
+    {
+      "id": "msg_123",
+      "sender": "Neha",
+      "text": "hold 2 min",
+      "timestamp": "2024-01-17T15:31:15",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_124",
+      "sender": "Pooja",
+      "text": "floor rise plus parking wala revised quote bhejo",
+      "timestamp": "2024-01-17T15:36:00",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_125",
+      "sender": "Anita",
+      "text": "clubhouse lights on rakhna evening visit ke liye",
+      "timestamp": "2024-01-17T16:01:00",
+      "ground_truth_label": "site_visit"
+    },
+    {
+      "id": "msg_126",
+      "sender": "Pooja",
+      "text": "client bas dekhna chahta, price baad me",
+      "timestamp": "2024-01-17T16:10:00",
+      "ground_truth_label": "site_visit"
+    },
+    {
+      "id": "msg_127",
+      "sender": "Pooja",
+      "text": "3.5 lakh aur niche ja sakta if token now",
+      "timestamp": "2024-01-17T16:27:15",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_128",
+      "sender": "Pooja",
+      "text": "driver ko exact pin drop bhejna",
+      "timestamp": "2024-01-17T16:43:15",
+      "ground_truth_label": "site_visit"
+    },
+    {
+      "id": "msg_129",
+      "sender": "Vikas",
+      "text": "pin latest cost sheet please",
+      "timestamp": "2024-01-17T16:59:15",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_130",
+      "sender": "Vikas",
+      "text": "sunset ke baad tower lighting on hona chahiye",
+      "timestamp": "2024-01-17T17:16:00",
+      "ground_truth_label": "site_visit"
+    },
+    {
+      "id": "msg_131",
+      "sender": "Neha",
+      "text": "walk in count share after lunch",
+      "timestamp": "2024-01-17T17:43:45",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_132",
+      "sender": "Priya",
+      "text": "garden facing duplex final release me hai kya",
+      "timestamp": "2024-01-17T18:01:45",
+      "ground_truth_label": "property_inquiry"
+    },
+    {
+      "id": "msg_133",
+      "sender": "Priya",
+      "text": "sunset ke baad tower lighting on hona chahiye",
+      "timestamp": "2024-01-17T18:26:45",
+      "ground_truth_label": "site_visit"
+    },
+    {
+      "id": "msg_134",
+      "sender": "Priya",
+      "text": "site visit 4 pm Arora family confirmed",
+      "timestamp": "2024-01-17T18:45:45",
+      "ground_truth_label": "site_visit"
+    },
+    {
+      "id": "msg_135",
+      "sender": "Priya",
+      "text": "closing ke liye one last nudge possible?",
+      "timestamp": "2024-01-17T19:06:00",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_136",
+      "sender": "Sneha",
+      "text": "sale deed me wife co owner add karna simple hai?",
+      "timestamp": "2024-01-17T19:30:30",
+      "ground_truth_label": "legal_docs"
+    },
+    {
+      "id": "msg_137",
+      "sender": "Nidhi",
+      "text": "penthouse sold out ya ek do hold pe hai",
+      "timestamp": "2024-01-17T19:50:00",
+      "ground_truth_label": "property_inquiry"
+    },
+    {
+      "id": "msg_138",
+      "sender": "Nidhi",
+      "text": "RERA cert pdf share karna hai kya",
+      "timestamp": "2024-01-17T20:03:00",
+      "ground_truth_label": "legal_docs"
+    },
+    {
+      "id": "msg_139",
+      "sender": "Ishita",
+      "text": "ready to move near clubhouse unit hai koi",
+      "timestamp": "2024-01-17T20:20:45",
+      "ground_truth_label": "property_inquiry"
+    },
+    {
+      "id": "msg_140",
+      "sender": "Ishita",
+      "text": "commercial unit pe fitout credit mil sakta?",
+      "timestamp": "2024-01-17T20:34:30",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_141",
+      "sender": "Ishita",
+      "text": "blocked units list EOD bhejna",
+      "timestamp": "2024-01-17T20:48:45",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_142",
+      "sender": "Manish",
+      "text": "client bas dekhna chahta, price baad me",
+      "timestamp": "2024-01-17T21:11:15",
+      "ground_truth_label": "site_visit"
+    },
+    {
+      "id": "msg_143",
+      "sender": "Manish",
+      "text": "badges pehen lena weekend pe",
+      "timestamp": "2024-01-17T21:20:15",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_144",
+      "sender": "Manish",
+      "text": "exact percent bhejo, mostly mat bolo",
+      "timestamp": "2024-01-17T21:32:00",
+      "ground_truth_label": "legal_docs"
+    },
+    {
+      "id": "msg_145",
+      "sender": "Karan",
+      "text": "brochure rates old hain, fresh sheet bhejo",
+      "timestamp": "2024-01-17T21:44:00",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_146",
+      "sender": "Priya",
+      "text": "buggy bhi chahiye, couple with parents aa rahe",
+      "timestamp": "2024-01-17T21:56:15",
+      "ground_truth_label": "site_visit"
+    },
+    {
+      "id": "msg_147",
+      "sender": "Priya",
+      "text": "sample villa open karwa do before lunch",
+      "timestamp": "2024-01-17T21:31:30",
+      "ground_truth_label": "site_visit"
+    },
+    {
+      "id": "msg_148",
+      "sender": "Priya",
+      "text": "power of attorney copy enough hogi for booking?",
+      "timestamp": "2024-01-17T21:49:45",
+      "ground_truth_label": "legal_docs"
+    },
+    {
+      "id": "msg_149",
+      "sender": "Manish",
+      "text": "subvention plan docs ka latest format share karo",
+      "timestamp": "2024-01-17T21:18:00",
+      "ground_truth_label": "legal_docs"
+    },
+    {
+      "id": "msg_150",
+      "sender": "Manish",
+      "text": "under construction pe gst include bola tha na",
+      "timestamp": "2024-01-17T21:39:45",
+      "ground_truth_label": "legal_docs"
+    }
+  ]
+}

@@ -1,0 +1,1065 @@
+{
+  "business_name": "TechZone Electronics",
+  "business_type": "electronics_retail",
+  "group_name": "Seller Support Group",
+  "description": "A messy WhatsApp-style seller support group for TechZone Electronics with interleaved stock checks, rate discussions, complaints, dispatch updates, and short context-heavy replies.",
+  "available_labels": [
+    "product_inquiry",
+    "pricing",
+    "complaint",
+    "order_update",
+    "general"
+  ],
+  "messages": [
+    {
+      "id": "msg_001",
+      "sender": "Neha",
+      "text": "speaker 20 pcs me landed rate kitna banega",
+      "timestamp": "2024-01-15T09:05:00",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_002",
+      "sender": "Meera",
+      "text": "ab bolo",
+      "timestamp": "2024-01-15T09:31:15",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_003",
+      "sender": "Meera",
+      "text": "return inward done, refund queue me ddd",
+      "timestamp": "2024-01-15T09:50:15",
+      "ground_truth_label": "order_update"
+    },
+    {
+      "id": "msg_004",
+      "sender": "Anita",
+      "text": "cash desk pe kaun hai",
+      "timestamp": "2024-01-15T10:09:15",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_005",
+      "sender": "Vikas",
+      "text": "mouse scroll day one se jam hai",
+      "timestamp": "2024-01-15T10:32:30",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_006",
+      "sender": "Anita",
+      "text": "gst incl final number bhejo sir call pe hai",
+      "timestamp": "2024-01-15T10:56:15",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_007",
+      "sender": "Saurabh",
+      "text": "pin new sheet please",
+      "timestamp": "2024-01-15T11:18:15",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_008",
+      "sender": "Saurabh",
+      "text": "sir ko headline num chahiye, breakup baad me",
+      "timestamp": "2024-01-15T11:25:30",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_009",
+      "sender": "Saurabh",
+      "text": "air cooler bulk 8 pcs no install final bolo",
+      "timestamp": "2024-01-15T11:52:30",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_010",
+      "sender": "Saurabh",
+      "text": "card pe diff kitna rakhna hai",
+      "timestamp": "2024-01-15T12:13:15",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_011",
+      "sender": "Vikas",
+      "text": "banda leave kar dega agar 1049 cross hua to",
+      "timestamp": "2024-01-15T12:17:00",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_012",
+      "sender": "Ishita",
+      "text": "printer paper jam kar raha from day one",
+      "timestamp": "2024-01-15T12:30:30",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_013",
+      "sender": "Vikas",
+      "text": "kitchen chimney 60cm matte black abhi live hai kya",
+      "timestamp": "2024-01-15T12:33:30",
+      "ground_truth_label": "product_inquiry"
+    },
+    {
+      "id": "msg_014",
+      "sender": "Vikas",
+      "text": "network gaya tha",
+      "timestamp": "2024-01-15T12:47:45",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_015",
+      "sender": "Vikas",
+      "text": "remote buttons hard press ho rahe",
+      "timestamp": "2024-01-15T12:57:45",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_016",
+      "sender": "Vikas",
+      "text": "led bulb 12w warm white bulk me kitna stock hai",
+      "timestamp": "2024-01-15T13:08:30",
+      "ground_truth_label": "product_inquiry"
+    },
+    {
+      "id": "msg_017",
+      "sender": "Vikas",
+      "text": "checking",
+      "timestamp": "2024-01-15T13:13:30",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_018",
+      "sender": "Vikas",
+      "text": "office ke liye 6 webcams chahiye, same model milenge?",
+      "timestamp": "2024-01-15T13:40:00",
+      "ground_truth_label": "product_inquiry"
+    },
+    {
+      "id": "msg_019",
+      "sender": "Vikas",
+      "text": "unbox video partial hai bas",
+      "timestamp": "2024-01-15T13:45:45",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_020",
+      "sender": "Vikas",
+      "text": "customer ko exact model pic bhejni hai, kaunsa ready hai",
+      "timestamp": "2024-01-15T14:12:45",
+      "ground_truth_label": "product_inquiry"
+    },
+    {
+      "id": "msg_021",
+      "sender": "Arjun",
+      "text": "courier late hai, eta app pe edit kar do",
+      "timestamp": "2024-01-15T14:20:15",
+      "ground_truth_label": "order_update"
+    },
+    {
+      "id": "msg_022",
+      "sender": "Arjun",
+      "text": "cash desk pe kaun hai",
+      "timestamp": "2024-01-15T14:40:15",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_023",
+      "sender": "Sneha",
+      "text": "service center bheju ya pehle soothe karu usko",
+      "timestamp": "2024-01-15T14:52:00",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_024",
+      "sender": "Anita",
+      "text": "scan ho gaya but pack table pe hi pada hai",
+      "timestamp": "2024-01-15T15:14:30",
+      "ground_truth_label": "order_update"
+    },
+    {
+      "id": "msg_025",
+      "sender": "Anita",
+      "text": "lunch ke baad dekhte",
+      "timestamp": "2024-01-15T15:24:15",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_026",
+      "sender": "Manish",
+      "text": "cash desk pe kaun hai",
+      "timestamp": "2024-01-15T15:51:15",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_027",
+      "sender": "Anita",
+      "text": "inverter battery combo ready set mil jayega?",
+      "timestamp": "2024-01-15T16:16:30",
+      "ground_truth_label": "product_inquiry"
+    },
+    {
+      "id": "msg_028",
+      "sender": "Anita",
+      "text": "iphone 15 128 best cash rate bolo",
+      "timestamp": "2024-01-15T16:31:45",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_029",
+      "sender": "Anita",
+      "text": "replacement approved, reverse pickup bhi booked",
+      "timestamp": "2024-01-15T16:49:30",
+      "ground_truth_label": "order_update"
+    },
+    {
+      "id": "msg_030",
+      "sender": "Anita",
+      "text": "washing machine dent pic bheja hai, check once",
+      "timestamp": "2024-01-15T17:06:30",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_031",
+      "sender": "Saurabh",
+      "text": "customer comparing amazon rate, kya bolu",
+      "timestamp": "2024-01-15T17:16:30",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_032",
+      "sender": "Meera",
+      "text": "student bill pe mac air lowest kitna jaega",
+      "timestamp": "2024-01-15T17:21:45",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_033",
+      "sender": "Meera",
+      "text": "invoice today hi banana hai to final karo",
+      "timestamp": "2024-01-15T17:25:30",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_034",
+      "sender": "Meera",
+      "text": "store 2 khul gaya?",
+      "timestamp": "2024-01-15T17:45:30",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_035",
+      "sender": "Arjun",
+      "text": "not clear yaar",
+      "timestamp": "2024-01-15T18:06:30",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_036",
+      "sender": "Arjun",
+      "text": "address corrected, cancel mat karna",
+      "timestamp": "2024-01-15T18:09:30",
+      "ground_truth_label": "order_update"
+    },
+    {
+      "id": "msg_037",
+      "sender": "Amit",
+      "text": "delivered late but customer manageable tha",
+      "timestamp": "2024-01-15T18:34:30",
+      "ground_truth_label": "order_update"
+    },
+    {
+      "id": "msg_038",
+      "sender": "Amit",
+      "text": "same complaint fir se aaya yaar",
+      "timestamp": "2024-01-15T18:44:30",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_039",
+      "sender": "Manish",
+      "text": "awb number group me drop karta hu",
+      "timestamp": "2024-01-15T18:48:45",
+      "ground_truth_label": "order_update"
+    },
+    {
+      "id": "msg_040",
+      "sender": "Manish",
+      "text": "ps5 plus extra controller final final kya rakhna",
+      "timestamp": "2024-01-15T18:54:30",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_041",
+      "sender": "Manish",
+      "text": "piece dead nahi but behave weird kar raha",
+      "timestamp": "2024-01-15T19:04:45",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_042",
+      "sender": "Anita",
+      "text": "address corrected, cancel mat karna",
+      "timestamp": "2024-01-15T19:29:15",
+      "ground_truth_label": "order_update"
+    },
+    {
+      "id": "msg_043",
+      "sender": "Anita",
+      "text": "unbox video partial hai bas",
+      "timestamp": "2024-01-15T19:39:00",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_044",
+      "sender": "Anita",
+      "text": "customer pooch raha ps5 disk version fresh lot me hai?",
+      "timestamp": "2024-01-15T19:46:45",
+      "ground_truth_label": "product_inquiry"
+    },
+    {
+      "id": "msg_045",
+      "sender": "Anita",
+      "text": "customer pickup 6 baje ayega, side me rakhna",
+      "timestamp": "2024-01-15T20:08:15",
+      "ground_truth_label": "order_update"
+    },
+    {
+      "id": "msg_046",
+      "sender": "Ishita",
+      "text": "remote buttons hard press ho rahe",
+      "timestamp": "2024-01-15T20:18:45",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_047",
+      "sender": "Ishita",
+      "text": "customer comparing amazon rate, kya bolu",
+      "timestamp": "2024-01-15T20:47:15",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_048",
+      "sender": "Dev",
+      "text": "ab bolo",
+      "timestamp": "2024-01-15T20:56:15",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_049",
+      "sender": "Meera",
+      "text": "return inward done, refund queue me ddd",
+      "timestamp": "2024-01-15T21:02:45",
+      "ground_truth_label": "order_update"
+    },
+    {
+      "id": "msg_050",
+      "sender": "Neha",
+      "text": "card pe diff kitna rakhna hai",
+      "timestamp": "2024-01-15T21:17:15",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_051",
+      "sender": "Neha",
+      "text": "same day promise mat karo jaipur order pe",
+      "timestamp": "2024-01-16T09:12:00",
+      "ground_truth_label": "order_update"
+    },
+    {
+      "id": "msg_052",
+      "sender": "Neha",
+      "text": "unbox video partial hai bas",
+      "timestamp": "2024-01-16T09:28:30",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_053",
+      "sender": "Neha",
+      "text": "soundbar remote missing nikla",
+      "timestamp": "2024-01-16T09:54:30",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_054",
+      "sender": "Neha",
+      "text": "dealer wants one last push before noon",
+      "timestamp": "2024-01-16T10:18:30",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_055",
+      "sender": "Neha",
+      "text": "customer pickup 6 baje ayega, side me rakhna",
+      "timestamp": "2024-01-16T10:23:00",
+      "ground_truth_label": "order_update"
+    },
+    {
+      "id": "msg_056",
+      "sender": "Neha",
+      "text": "2 ton inverter ac copper indoor outdoor both ready?",
+      "timestamp": "2024-01-16T10:49:15",
+      "ground_truth_label": "product_inquiry"
+    },
+    {
+      "id": "msg_057",
+      "sender": "Neha",
+      "text": "display piece ke alawa sealed bhi chahiye",
+      "timestamp": "2024-01-16T11:17:15",
+      "ground_truth_label": "product_inquiry"
+    },
+    {
+      "id": "msg_058",
+      "sender": "Neha",
+      "text": "printer toner included hota na is pack me",
+      "timestamp": "2024-01-16T11:27:15",
+      "ground_truth_label": "product_inquiry"
+    },
+    {
+      "id": "msg_059",
+      "sender": "Neha",
+      "text": "router plus extenders same as last month de sakte?",
+      "timestamp": "2024-01-16T11:37:00",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_060",
+      "sender": "Rahul",
+      "text": "same day dispatch promise karke price hold rakhein?",
+      "timestamp": "2024-01-16T11:54:00",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_061",
+      "sender": "Pooja",
+      "text": "customer bas dekhna nahi, pickup bhi kar sakta aaj",
+      "timestamp": "2024-01-16T12:10:00",
+      "ground_truth_label": "product_inquiry"
+    },
+    {
+      "id": "msg_062",
+      "sender": "Anita",
+      "text": "dealer wants one last push before noon",
+      "timestamp": "2024-01-16T12:21:30",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_063",
+      "sender": "Neha",
+      "text": "demo hai but saleable nahi na?",
+      "timestamp": "2024-01-16T12:31:30",
+      "ground_truth_label": "product_inquiry"
+    },
+    {
+      "id": "msg_064",
+      "sender": "Neha",
+      "text": "ab bolo",
+      "timestamp": "2024-01-16T12:49:15",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_065",
+      "sender": "Manish",
+      "text": "speaker 20 pcs me landed rate kitna banega",
+      "timestamp": "2024-01-16T12:55:15",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_066",
+      "sender": "Ishita",
+      "text": "haan check karta",
+      "timestamp": "2024-01-16T13:19:00",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_067",
+      "sender": "Rahul",
+      "text": "seal open jaisa lag raha, customer shouting",
+      "timestamp": "2024-01-16T13:22:00",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_068",
+      "sender": "Ishita",
+      "text": "box damaged tha, ab blame hum pe aa raha",
+      "timestamp": "2024-01-16T13:49:00",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_069",
+      "sender": "Ishita",
+      "text": "network gaya tha",
+      "timestamp": "2024-01-16T13:57:30",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_070",
+      "sender": "Ishita",
+      "text": "adapter bahut garam ho raha, banda dara hua",
+      "timestamp": "2024-01-16T14:16:00",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_071",
+      "sender": "Manish",
+      "text": "small fridge 190L silver available?",
+      "timestamp": "2024-01-16T14:25:30",
+      "ground_truth_label": "product_inquiry"
+    },
+    {
+      "id": "msg_072",
+      "sender": "Vikas",
+      "text": "final mile run me hai, evening tak close",
+      "timestamp": "2024-01-16T14:29:30",
+      "ground_truth_label": "order_update"
+    },
+    {
+      "id": "msg_073",
+      "sender": "Vikas",
+      "text": "dell i7 laptop 16gb wala ready piece bacha?",
+      "timestamp": "2024-01-16T14:44:30",
+      "ground_truth_label": "product_inquiry"
+    },
+    {
+      "id": "msg_074",
+      "sender": "Vikas",
+      "text": "ye wala same day mil sakta agar abhi confirm kare?",
+      "timestamp": "2024-01-16T14:59:45",
+      "ground_truth_label": "product_inquiry"
+    },
+    {
+      "id": "msg_075",
+      "sender": "Vikas",
+      "text": "8 mixer grinder combo ka all in kya padega",
+      "timestamp": "2024-01-16T15:28:15",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_076",
+      "sender": "Rahul",
+      "text": "store 2 khul gaya?",
+      "timestamp": "2024-01-16T15:40:45",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_077",
+      "sender": "Rahul",
+      "text": "payment received for order 471, move kar do",
+      "timestamp": "2024-01-16T16:06:30",
+      "ground_truth_label": "order_update"
+    },
+    {
+      "id": "msg_078",
+      "sender": "Nidhi",
+      "text": "if prepaid ho to aur kitna niche ja sakta",
+      "timestamp": "2024-01-16T16:31:00",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_079",
+      "sender": "Vikas",
+      "text": "delivered hai but installation pending",
+      "timestamp": "2024-01-16T16:38:00",
+      "ground_truth_label": "order_update"
+    },
+    {
+      "id": "msg_080",
+      "sender": "Vikas",
+      "text": "remote buttons hard press ho rahe",
+      "timestamp": "2024-01-16T16:50:00",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_081",
+      "sender": "Sneha",
+      "text": "delivered hai but installation pending",
+      "timestamp": "2024-01-16T16:54:45",
+      "ground_truth_label": "order_update"
+    },
+    {
+      "id": "msg_082",
+      "sender": "Sneha",
+      "text": "order split karna pada, accessory kal jayegi",
+      "timestamp": "2024-01-16T17:21:30",
+      "ground_truth_label": "order_update"
+    },
+    {
+      "id": "msg_083",
+      "sender": "Sneha",
+      "text": "hub se nikla, tracking 20 min me live hoga",
+      "timestamp": "2024-01-16T17:25:45",
+      "ground_truth_label": "order_update"
+    },
+    {
+      "id": "msg_084",
+      "sender": "Manish",
+      "text": "pickup boy phone nahi utha raha",
+      "timestamp": "2024-01-16T17:29:45",
+      "ground_truth_label": "order_update"
+    },
+    {
+      "id": "msg_085",
+      "sender": "Neha",
+      "text": "monitor stand box se missing nikla",
+      "timestamp": "2024-01-16T17:51:15",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_086",
+      "sender": "Sneha",
+      "text": "store transfer se ayega, aaj nikalna mushkil hai",
+      "timestamp": "2024-01-16T18:11:00",
+      "ground_truth_label": "order_update"
+    },
+    {
+      "id": "msg_087",
+      "sender": "Kavya",
+      "text": "shelf c se item nikal gaya kya",
+      "timestamp": "2024-01-16T18:19:00",
+      "ground_truth_label": "order_update"
+    },
+    {
+      "id": "msg_088",
+      "sender": "Kavya",
+      "text": "white ya blue dono me kuch bacha?",
+      "timestamp": "2024-01-16T18:38:00",
+      "ground_truth_label": "product_inquiry"
+    },
+    {
+      "id": "msg_089",
+      "sender": "Kavya",
+      "text": "same complaint fir se aaya yaar",
+      "timestamp": "2024-01-16T18:46:00",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_090",
+      "sender": "Kavya",
+      "text": "rto avoid karna hai, customer reconfirmed",
+      "timestamp": "2024-01-16T19:08:00",
+      "ground_truth_label": "order_update"
+    },
+    {
+      "id": "msg_091",
+      "sender": "Kavya",
+      "text": "hold on 2 min",
+      "timestamp": "2024-01-16T19:32:00",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_092",
+      "sender": "Kavya",
+      "text": "speaker charging port loose lag raha",
+      "timestamp": "2024-01-16T19:47:00",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_093",
+      "sender": "Karan",
+      "text": "budget 20 ke under hai, best kaunsa dikhau",
+      "timestamp": "2024-01-16T20:08:00",
+      "ground_truth_label": "product_inquiry"
+    },
+    {
+      "id": "msg_094",
+      "sender": "Karan",
+      "text": "air fryer handle wobble kar raha",
+      "timestamp": "2024-01-16T20:29:45",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_095",
+      "sender": "Ishita",
+      "text": "price freeze today tak hai na",
+      "timestamp": "2024-01-16T20:34:30",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_096",
+      "sender": "Vikas",
+      "text": "printer paper jam kar raha from day one",
+      "timestamp": "2024-01-16T20:40:00",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_097",
+      "sender": "Amit",
+      "text": "soundbar remote missing nikla",
+      "timestamp": "2024-01-16T21:04:45",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_098",
+      "sender": "Saurabh",
+      "text": "same day dispatch promise karke price hold rakhein?",
+      "timestamp": "2024-01-16T21:26:30",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_099",
+      "sender": "Saurabh",
+      "text": "hold on 2 min",
+      "timestamp": "2024-01-16T21:39:45",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_100",
+      "sender": "Arjun",
+      "text": "ye wala same day mil sakta agar abhi confirm kare?",
+      "timestamp": "2024-01-16T21:49:00",
+      "ground_truth_label": "product_inquiry"
+    },
+    {
+      "id": "msg_101",
+      "sender": "Vikas",
+      "text": "shelf c se item nikal gaya kya",
+      "timestamp": "2024-01-17T09:08:00",
+      "ground_truth_label": "order_update"
+    },
+    {
+      "id": "msg_102",
+      "sender": "Vikas",
+      "text": "office ke liye 6 webcams chahiye, same model milenge?",
+      "timestamp": "2024-01-17T09:18:15",
+      "ground_truth_label": "product_inquiry"
+    },
+    {
+      "id": "msg_103",
+      "sender": "Vikas",
+      "text": "headline 1 line me bhejo bas",
+      "timestamp": "2024-01-17T09:33:15",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_104",
+      "sender": "Nidhi",
+      "text": "install free bol sakte ya risky hai",
+      "timestamp": "2024-01-17T09:57:30",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_105",
+      "sender": "Nidhi",
+      "text": "earbuds one side dead in 2 din",
+      "timestamp": "2024-01-17T10:14:45",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_106",
+      "sender": "Nidhi",
+      "text": "gaming monitor 27 inch 144hz koi open box to nahi",
+      "timestamp": "2024-01-17T10:41:45",
+      "ground_truth_label": "product_inquiry"
+    },
+    {
+      "id": "msg_107",
+      "sender": "Nidhi",
+      "text": "address corrected, cancel mat karna",
+      "timestamp": "2024-01-17T10:45:15",
+      "ground_truth_label": "order_update"
+    },
+    {
+      "id": "msg_108",
+      "sender": "Nidhi",
+      "text": "white ya blue dono me kuch bacha?",
+      "timestamp": "2024-01-17T11:08:00",
+      "ground_truth_label": "product_inquiry"
+    },
+    {
+      "id": "msg_109",
+      "sender": "Anita",
+      "text": "service center bheju ya pehle soothe karu usko",
+      "timestamp": "2024-01-17T11:14:00",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_110",
+      "sender": "Saurabh",
+      "text": "card pe diff kitna rakhna hai",
+      "timestamp": "2024-01-17T11:34:00",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_111",
+      "sender": "Saurabh",
+      "text": "store 2 khul gaya?",
+      "timestamp": "2024-01-17T11:53:15",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_112",
+      "sender": "Saurabh",
+      "text": "air cooler bulk 8 pcs no install final bolo",
+      "timestamp": "2024-01-17T12:00:30",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_113",
+      "sender": "Saurabh",
+      "text": "sony tv wall mount box me aata ya alag",
+      "timestamp": "2024-01-17T12:05:30",
+      "ground_truth_label": "product_inquiry"
+    },
+    {
+      "id": "msg_114",
+      "sender": "Saurabh",
+      "text": "price freeze today tak hai na",
+      "timestamp": "2024-01-17T12:19:45",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_115",
+      "sender": "Saurabh",
+      "text": "customer ko exact model pic bhejni hai, kaunsa ready hai",
+      "timestamp": "2024-01-17T12:28:15",
+      "ground_truth_label": "product_inquiry"
+    },
+    {
+      "id": "msg_116",
+      "sender": "Arjun",
+      "text": "canon ink tank wifi wala hai kya",
+      "timestamp": "2024-01-17T12:48:30",
+      "ground_truth_label": "product_inquiry"
+    },
+    {
+      "id": "msg_117",
+      "sender": "Arjun",
+      "text": "return reached hub, qc kal hoga",
+      "timestamp": "2024-01-17T13:11:15",
+      "ground_truth_label": "order_update"
+    },
+    {
+      "id": "msg_118",
+      "sender": "Arjun",
+      "text": "pickup rescheduled due to rain route issue",
+      "timestamp": "2024-01-17T13:15:00",
+      "ground_truth_label": "order_update"
+    },
+    {
+      "id": "msg_119",
+      "sender": "Priya",
+      "text": "canon ink tank wifi wala hai kya",
+      "timestamp": "2024-01-17T13:27:00",
+      "ground_truth_label": "product_inquiry"
+    },
+    {
+      "id": "msg_120",
+      "sender": "Arjun",
+      "text": "demo hai but saleable nahi na?",
+      "timestamp": "2024-01-17T13:34:15",
+      "ground_truth_label": "product_inquiry"
+    },
+    {
+      "id": "msg_121",
+      "sender": "Arjun",
+      "text": "haan check karta",
+      "timestamp": "2024-01-17T13:40:15",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_122",
+      "sender": "Saurabh",
+      "text": "invoice today hi banana hai to final karo",
+      "timestamp": "2024-01-17T14:07:00",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_123",
+      "sender": "Saurabh",
+      "text": "same mouse online se niche kaise justify karu",
+      "timestamp": "2024-01-17T14:14:15",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_124",
+      "sender": "Saurabh",
+      "text": "noise zyada aa raha operation me",
+      "timestamp": "2024-01-17T14:27:00",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_125",
+      "sender": "Manish",
+      "text": "demo hai but saleable nahi na?",
+      "timestamp": "2024-01-17T14:36:15",
+      "ground_truth_label": "product_inquiry"
+    },
+    {
+      "id": "msg_126",
+      "sender": "Manish",
+      "text": "packed and labelled, invoice bas print hona hai",
+      "timestamp": "2024-01-17T14:45:30",
+      "ground_truth_label": "order_update"
+    },
+    {
+      "id": "msg_127",
+      "sender": "Manish",
+      "text": "delivery ke baad hi issue bola, thoda messy case hai",
+      "timestamp": "2024-01-17T15:05:00",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_128",
+      "sender": "Neha",
+      "text": "hp laser printer duplex wala abhi store 2 me hoga?",
+      "timestamp": "2024-01-17T15:16:00",
+      "ground_truth_label": "product_inquiry"
+    },
+    {
+      "id": "msg_129",
+      "sender": "Neha",
+      "text": "piece dead nahi but behave weird kar raha",
+      "timestamp": "2024-01-17T15:21:30",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_130",
+      "sender": "Saurabh",
+      "text": "hub se nikla, tracking 20 min me live hoga",
+      "timestamp": "2024-01-17T15:32:30",
+      "ground_truth_label": "order_update"
+    },
+    {
+      "id": "msg_131",
+      "sender": "Pooja",
+      "text": "same mouse online se niche kaise justify karu",
+      "timestamp": "2024-01-17T15:35:45",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_132",
+      "sender": "Arjun",
+      "text": "packed and labelled, invoice bas print hona hai",
+      "timestamp": "2024-01-17T16:02:45",
+      "ground_truth_label": "order_update"
+    },
+    {
+      "id": "msg_133",
+      "sender": "Arjun",
+      "text": "student bill pe mac air lowest kitna jaega",
+      "timestamp": "2024-01-17T16:26:00",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_134",
+      "sender": "Arjun",
+      "text": "ok done",
+      "timestamp": "2024-01-17T16:34:30",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_135",
+      "sender": "Arjun",
+      "text": "ab bolo",
+      "timestamp": "2024-01-17T16:55:00",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_136",
+      "sender": "Pooja",
+      "text": "gst incl final number bhejo sir call pe hai",
+      "timestamp": "2024-01-17T17:15:00",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_137",
+      "sender": "Pooja",
+      "text": "monitor plus keyboard combo last time wala rate milega?",
+      "timestamp": "2024-01-17T17:21:00",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_138",
+      "sender": "Neha",
+      "text": "kitchen chimney 60cm matte black abhi live hai kya",
+      "timestamp": "2024-01-17T17:46:00",
+      "ground_truth_label": "product_inquiry"
+    },
+    {
+      "id": "msg_139",
+      "sender": "Arjun",
+      "text": "budget 20 ke under hai, best kaunsa dikhau",
+      "timestamp": "2024-01-17T18:06:00",
+      "ground_truth_label": "product_inquiry"
+    },
+    {
+      "id": "msg_140",
+      "sender": "Arjun",
+      "text": "gaming monitor 27 inch 144hz koi open box to nahi",
+      "timestamp": "2024-01-17T18:20:45",
+      "ground_truth_label": "product_inquiry"
+    },
+    {
+      "id": "msg_141",
+      "sender": "Karan",
+      "text": "packed hai, rider assign pending",
+      "timestamp": "2024-01-17T18:40:45",
+      "ground_truth_label": "order_update"
+    },
+    {
+      "id": "msg_142",
+      "sender": "Karan",
+      "text": "inverter battery combo ready set mil jayega?",
+      "timestamp": "2024-01-17T18:56:45",
+      "ground_truth_label": "product_inquiry"
+    },
+    {
+      "id": "msg_143",
+      "sender": "Pooja",
+      "text": "mat bhoolna bas",
+      "timestamp": "2024-01-17T19:01:00",
+      "ground_truth_label": "general"
+    },
+    {
+      "id": "msg_144",
+      "sender": "Pooja",
+      "text": "inverter battery combo ready set mil jayega?",
+      "timestamp": "2024-01-17T19:15:00",
+      "ground_truth_label": "product_inquiry"
+    },
+    {
+      "id": "msg_145",
+      "sender": "Dev",
+      "text": "dealer wants one last push before noon",
+      "timestamp": "2024-01-17T19:29:00",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_146",
+      "sender": "Pooja",
+      "text": "gst incl final number bhejo sir call pe hai",
+      "timestamp": "2024-01-17T19:53:00",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_147",
+      "sender": "Vikas",
+      "text": "dealer bol raha 999 me close karo, doable hai kya",
+      "timestamp": "2024-01-17T20:17:00",
+      "ground_truth_label": "pricing"
+    },
+    {
+      "id": "msg_148",
+      "sender": "Vikas",
+      "text": "customer trust nahi kar raha invoice dikhane ke baad bhi",
+      "timestamp": "2024-01-17T20:31:45",
+      "ground_truth_label": "complaint"
+    },
+    {
+      "id": "msg_149",
+      "sender": "Rahul",
+      "text": "small fridge 190L silver available?",
+      "timestamp": "2024-01-17T20:48:30",
+      "ground_truth_label": "product_inquiry"
+    },
+    {
+      "id": "msg_150",
+      "sender": "Meera",
+      "text": "same invoice pe add ho sakta agar stock ho",
+      "timestamp": "2024-01-17T21:14:30",
+      "ground_truth_label": "product_inquiry"
+    }
+  ]
+}
