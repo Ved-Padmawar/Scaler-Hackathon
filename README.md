@@ -163,9 +163,16 @@ poetry run python inference.py
 
 | Task | Business | Score |
 |---|---|---|
-| classify | Electronics Retail | ~0.80 |
-| cluster | Restaurant Chain | ~0.65 |
-| prompt_gen | Real Estate | ~0.60 |
+| classify | Electronics Retail | 0.927 |
+| classify | Restaurant Chain | 0.940 |
+| classify | Real Estate | 0.940 |
+| cluster | Electronics Retail | 0.943 |
+| cluster | Restaurant Chain | 0.928 |
+| cluster | Real Estate | 0.915 |
+| prompt_gen | Electronics Retail | 0.964 |
+| prompt_gen | Restaurant Chain | 0.983 |
+| prompt_gen | Real Estate | 0.964 |
+| **Average** | **All** | **0.945** |
 
 ---
 
