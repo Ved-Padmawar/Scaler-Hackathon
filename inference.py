@@ -10,7 +10,7 @@ Environment variables required:
     HF_TOKEN       API key
 """
 
-import orjson
+import json
 import os
 import textwrap
 from typing import Any, Dict, List, Optional
@@ -190,7 +190,7 @@ def get_action(
                 raw = raw[4:]
             raw = raw.strip()
 
-        parsed = orjson.loads(raw)
+        parsed = json.loads(raw)
         action_str = raw[:80].replace("\n", " ")
 
         if task_type == TaskType.CLASSIFY:
