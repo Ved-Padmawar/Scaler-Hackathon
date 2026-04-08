@@ -18,7 +18,7 @@ from typing import Any, Dict, List, Optional
 
 import urllib.request
 import urllib.error
-from openai import AzureOpenAI, OpenAI
+import ssl
 
 try:
     from dotenv import load_dotenv
@@ -167,7 +167,51 @@ def build_prompt_gen_prompt(obs: Dict[str, Any]) -> str:
 # Agent — calls LLM and returns action dict
 # ---------------------------------------------------------------------------
 
-def get_action(client, task_type: str, obs: Dict[str, Any]) -> tuple:
+AZURE_API_VERSION = os.getenv("AZURE_API_VERSION", "2025-04-01-preview")
+IS_AZURE = "azure.com" in API_BASE_URL
+
+
+def llm_chat(system: str, user: str) -> str:
+    """Call OpenAI-compatible chat completions endpoint via raw HTTP."""
+    if IS_AZURE:
+        url = (
+            f"{API_BASE_URL.rstrip('/')}/openai/deployments/{MODEL_NAME}"
+            f"/chat/completions?api-version={AZURE_API_VERSION}"
+        )
+        headers = {
+            "Content-Type": "application/json",
+            "api-key": API_KEY,
+        }
+    else:
+        url = f"{API_BASE_URL.rstrip('/')}/chat/completions"
+        headers = {
+            "Content-Type": "application/json",
+            "Authorization": f"Bearer {API_KEY}",
+        }
+
+    payload = {
+        "model": MODEL_NAME,
+        "messages": [
+            {"role": "system", "content": system},
+            {"role": "user", "content": user},
+        ],
+        "temperature": TEMPERATURE,
+        "max_completion_tokens": MAX_TOKENS,
+    }
+    body = json.dumps(payload).encode("utf-8")
+    req = urllib.request.Request(url, data=body, headers=headers, method="POST")
+    ctx = ssl.create_default_context()
+    try:
+        with urllib.request.urlopen(req, timeout=120, context=ctx) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+    except urllib.error.HTTPError as e:
+        err_body = e.read().decode("utf-8", errors="replace")
+        print(f"[VERBOSE] LLM API error {e.code}: {err_body[:500]}", flush=True)
+        raise
+    return (data["choices"][0]["message"]["content"] or "").strip()
+
+
+def get_action(task_type: str, obs: Dict[str, Any]) -> tuple:
     if task_type == "classify":
         system, user = CLASSIFY_SYSTEM, build_classify_prompt(obs)
     elif task_type == "cluster":
@@ -178,13 +222,7 @@ def get_action(client, task_type: str, obs: Dict[str, Any]) -> tuple:
     error = None
     action_str = ""
     try:
-        completion = client.chat.completions.create(
-            model=MODEL_NAME,
-            messages=[{"role": "system", "content": system}, {"role": "user", "content": user}],
-            temperature=TEMPERATURE,
-            max_completion_tokens=MAX_TOKENS,
-        )
-        raw = (completion.choices[0].message.content or "").strip()
+        raw = llm_chat(system, user)
         if raw.startswith("```"):
             raw = raw.split("```")[1]
             if raw.startswith("json"):
@@ -219,7 +257,7 @@ def get_action(client, task_type: str, obs: Dict[str, Any]) -> tuple:
 # Run a single episode
 # ---------------------------------------------------------------------------
 
-def run_episode(client, task_type: str, business_type: str) -> float:
+def run_episode(task_type: str, business_type: str) -> float:
     task_name = f"{task_type}-{business_type}"
     session_id = f"{task_type}-{business_type}-{int(time.time())}"
     log_start(task=task_name, env=BENCHMARK, model=MODEL_NAME)
@@ -239,7 +277,7 @@ def run_episode(client, task_type: str, business_type: str) -> float:
         print(f"{'='*60}\n", flush=True)
 
         for step in range(1, MAX_STEPS + 1):
-            action, action_str, error = get_action(client, task_type, obs)
+            action, action_str, error = get_action(task_type, obs)
             result = env_step(session_id, action)
 
             reward = result.get("reward", {}).get("score", 0.0)
@@ -271,15 +309,6 @@ def run_episode(client, task_type: str, business_type: str) -> float:
 # ---------------------------------------------------------------------------
 
 def main() -> None:
-    if "azure.com" in API_BASE_URL:
-        client = AzureOpenAI(
-            azure_endpoint=API_BASE_URL,
-            api_key=API_KEY,
-            api_version="2025-04-01-preview",
-        )
-    else:
-        client = OpenAI(base_url=API_BASE_URL or None, api_key=API_KEY)
-
     tasks = [
         ("classify", "electronics_retail"),
         ("cluster", "restaurant_chain"),
@@ -288,7 +317,7 @@ def main() -> None:
 
     all_scores = []
     for task_type, business_type in tasks:
-        score = run_episode(client, task_type, business_type)
+        score = run_episode(task_type, business_type)
         all_scores.append(score)
 
     avg = sum(all_scores) / len(all_scores) if all_scores else 0.0
