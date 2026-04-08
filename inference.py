@@ -1,47 +1,44 @@
 """
 Inference Script — Business Chat OpenEnv
 =========================================
-Runs an LLM agent against all 3 tasks (classify, cluster, prompt_gen)
-across all 3 business types and emits mandatory [START]/[STEP]/[END] logs.
+Runs an LLM agent against 3 tasks via the live HF Space HTTP API.
 
 Environment variables required:
-    API_BASE_URL   Azure/HF endpoint
+    API_BASE_URL   Azure/HF LLM endpoint
     MODEL_NAME     Model deployment name
     HF_TOKEN       API key
+    ENV_URL        OpenEnv server URL (default: https://thevedp-business-chat-env.hf.space)
 """
 
 import json
 import os
 import textwrap
+import time
 from typing import Any, Dict, List, Optional
 
-from dotenv import load_dotenv
+import urllib.request
+import urllib.error
 from openai import AzureOpenAI, OpenAI
 
-load_dotenv()
-
-from env.environment import BusinessChatEnv
-from env.models import (
-    Action,
-    BusinessType,
-    ClassifyAction,
-    ClusterAction,
-    PromptGenAction,
-    TaskType,
-)
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
 
 # ---------------------------------------------------------------------------
 # Config
 # ---------------------------------------------------------------------------
 
-API_KEY = os.getenv("HF_TOKEN") or os.getenv("AZURE_API_KEY") or os.getenv("OPENAI_API_KEY")
+API_KEY = os.getenv("HF_TOKEN") or os.getenv("AZURE_API_KEY") or os.getenv("OPENAI_API_KEY", "")
 API_BASE_URL = os.getenv("API_BASE_URL", "https://router.huggingface.co/v1")
 MODEL_NAME = os.getenv("MODEL_NAME", "Qwen/Qwen2.5-72B-Instruct")
+ENV_URL = os.getenv("ENV_URL", "https://thevedp-business-chat-env.hf.space")
 BENCHMARK = "business-chat-env"
 MAX_STEPS = 3
 TEMPERATURE = 0.0
-MAX_TOKENS = 2048
-SUCCESS_THRESHOLD = 0.9  # fix #4: align with env's done threshold
+MAX_TOKENS = 4096
+SUCCESS_THRESHOLD = 0.9
 
 # ---------------------------------------------------------------------------
 # Logging helpers (mandatory format)
@@ -67,6 +64,27 @@ def log_end(success: bool, steps: int, score: float, rewards: List[float]) -> No
     )
 
 # ---------------------------------------------------------------------------
+# HTTP env client
+# ---------------------------------------------------------------------------
+
+def _http_post(url: str, data: dict, headers: dict, timeout: int = 30) -> dict:
+    body = json.dumps(data).encode("utf-8")
+    req = urllib.request.Request(url, data=body, headers=headers, method="POST")
+    with urllib.request.urlopen(req, timeout=timeout) as resp:
+        return json.loads(resp.read().decode("utf-8"))
+
+
+def env_reset(session_id: str, task_type: str, business_type: str) -> Dict[str, Any]:
+    headers = {"X-Session-Id": session_id, "Content-Type": "application/json"}
+    result = _http_post(f"{ENV_URL}/reset", {"task_type": task_type, "business_type": business_type}, headers, timeout=30)
+    return result["observation"]
+
+
+def env_step(session_id: str, action: dict) -> Dict[str, Any]:
+    headers = {"X-Session-Id": session_id, "Content-Type": "application/json"}
+    return _http_post(f"{ENV_URL}/step", {"action": action}, headers, timeout=60)
+
+# ---------------------------------------------------------------------------
 # Prompt builders
 # ---------------------------------------------------------------------------
 
@@ -84,34 +102,31 @@ CLUSTER_SYSTEM = textwrap.dedent("""
     Respond with valid JSON only in this exact format:
     {
       "clusters": {"cluster_1": ["msg_001", "msg_002"], "cluster_2": ["msg_003"]},
-      "cluster_labels": {"cluster_1": "product inquiries", "cluster_2": "pricing questions"}
+      "cluster_labels": {"cluster_1": "descriptive topic label", "cluster_2": "another topic label"}
     }
-    Every message must be assigned to exactly one cluster. Labels must be descriptive.
+    Every message must appear in exactly one cluster. Labels must be 2+ words and descriptive.
 """).strip()
 
 PROMPT_GEN_SYSTEM = textwrap.dedent("""
     You are an expert prompt engineer specializing in business communication.
-    Given a business chat group's context and sample messages, generate a highly tailored prompt template.
-    The prompt will be used by an LLM to process future messages from this group.
+    Given a business chat group context and sample messages, generate a highly tailored prompt template.
     Respond with valid JSON only in this exact format:
     {
-      "prompt_template": "You are assisting a [business] ... [full prompt here]",
+      "prompt_template": "You are assisting [business]... [full detailed prompt, min 100 words]",
       "reasoning": "Explanation of design choices...",
       "identified_topics": ["topic1", "topic2", "topic3"]
     }
-    The prompt_template must be at least 100 words, specific to this business, and cover all key topics.
+    The prompt_template must be specific to this business type, mention the business name, and cover all key topics found in the messages.
 """).strip()
 
 
-def build_classify_prompt(observation: Dict[str, Any]) -> str:
-    ctx = observation["business_context"]
-    messages = observation["messages"]
-    labels = observation["available_labels"]
-    msgs_text = "\n".join(f'{m["id"]}: [{m["sender"]}] {m["text"]}' for m in messages)
+def build_classify_prompt(obs: Dict[str, Any]) -> str:
+    ctx = obs["business_context"]
+    msgs_text = "\n".join(f'{m["id"]}: [{m["sender"]}] {m["text"]}' for m in obs["messages"])
     return textwrap.dedent(f"""
         Business: {ctx["business_name"]} ({ctx["business_type"]})
         Group: {ctx["group_name"]}
-        Available labels: {labels}
+        Available labels: {obs["available_labels"]}
 
         Messages to classify:
         {msgs_text}
@@ -120,26 +135,23 @@ def build_classify_prompt(observation: Dict[str, Any]) -> str:
     """).strip()
 
 
-def build_cluster_prompt(observation: Dict[str, Any]) -> str:
-    ctx = observation["business_context"]
-    messages = observation["messages"]
-    msgs_text = "\n".join(f'{m["id"]}: [{m["sender"]}] {m["text"]}' for m in messages)
+def build_cluster_prompt(obs: Dict[str, Any]) -> str:
+    ctx = obs["business_context"]
+    msgs_text = "\n".join(f'{m["id"]}: [{m["sender"]}] {m["text"]}' for m in obs["messages"])
     return textwrap.dedent(f"""
         Business: {ctx["business_name"]} ({ctx["business_type"]})
         Group: {ctx["group_name"]}
-        Description: {ctx["description"]}
 
-        Messages to cluster (no labels given — discover them yourself):
+        Messages to cluster (no labels given — discover topics yourself):
         {msgs_text}
 
-        Group into 3-6 meaningful clusters. Return JSON only.
+        Group into 3-6 meaningful clusters with descriptive 2+ word labels. Return JSON only.
     """).strip()
 
 
-def build_prompt_gen_prompt(observation: Dict[str, Any]) -> str:
-    ctx = observation["business_context"]
-    messages = observation["messages"][:15]
-    msgs_text = "\n".join(f'[{m["sender"]}]: {m["text"]}' for m in messages)
+def build_prompt_gen_prompt(obs: Dict[str, Any]) -> str:
+    ctx = obs["business_context"]
+    msgs_text = "\n".join(f'[{m["sender"]}]: {m["text"]}' for m in obs["messages"][:20])
     return textwrap.dedent(f"""
         Business: {ctx["business_name"]} ({ctx["business_type"]})
         Group: {ctx["group_name"]}
@@ -152,38 +164,27 @@ def build_prompt_gen_prompt(observation: Dict[str, Any]) -> str:
     """).strip()
 
 # ---------------------------------------------------------------------------
-# Agent — calls LLM and parses response into Action
+# Agent — calls LLM and returns action dict
 # ---------------------------------------------------------------------------
 
-def get_action(
-    client: OpenAI,
-    task_type: str,
-    observation: Dict[str, Any],
-) -> tuple[Action, str, Optional[str]]:
-    if task_type == TaskType.CLASSIFY:
-        system = CLASSIFY_SYSTEM
-        user = build_classify_prompt(observation)
-    elif task_type == TaskType.CLUSTER:
-        system = CLUSTER_SYSTEM
-        user = build_cluster_prompt(observation)
+def get_action(client, task_type: str, obs: Dict[str, Any]) -> tuple:
+    if task_type == "classify":
+        system, user = CLASSIFY_SYSTEM, build_classify_prompt(obs)
+    elif task_type == "cluster":
+        system, user = CLUSTER_SYSTEM, build_cluster_prompt(obs)
     else:
-        system = PROMPT_GEN_SYSTEM
-        user = build_prompt_gen_prompt(observation)
+        system, user = PROMPT_GEN_SYSTEM, build_prompt_gen_prompt(obs)
 
     error = None
+    action_str = ""
     try:
         completion = client.chat.completions.create(
             model=MODEL_NAME,
-            messages=[
-                {"role": "system", "content": system},
-                {"role": "user", "content": user},
-            ],
+            messages=[{"role": "system", "content": system}, {"role": "user", "content": user}],
             temperature=TEMPERATURE,
             max_completion_tokens=MAX_TOKENS,
         )
         raw = (completion.choices[0].message.content or "").strip()
-
-        # Strip markdown if present
         if raw.startswith("```"):
             raw = raw.split("```")[1]
             if raw.startswith("json"):
@@ -193,75 +194,34 @@ def get_action(
         parsed = json.loads(raw)
         action_str = raw[:80].replace("\n", " ")
 
-        if task_type == TaskType.CLASSIFY:
-            action = Action(
-                task_type=TaskType.CLASSIFY,
-                classify_action=ClassifyAction(classifications=parsed["classifications"]),
-            )
-        elif task_type == TaskType.CLUSTER:
-            action = Action(
-                task_type=TaskType.CLUSTER,
-                cluster_action=ClusterAction(
-                    clusters=parsed["clusters"],
-                    cluster_labels=parsed["cluster_labels"],
-                ),
-            )
+        if task_type == "classify":
+            action = {"task_type": "classify", "classify_action": {"classifications": parsed["classifications"]}}
+        elif task_type == "cluster":
+            action = {"task_type": "cluster", "cluster_action": {"clusters": parsed["clusters"], "cluster_labels": parsed["cluster_labels"]}}
         else:
-            action = Action(
-                task_type=TaskType.PROMPT_GEN,
-                prompt_gen_action=PromptGenAction(
-                    prompt_template=parsed["prompt_template"],
-                    reasoning=parsed["reasoning"],
-                    identified_topics=parsed["identified_topics"],
-                ),
-            )
+            action = {"task_type": "prompt_gen", "prompt_gen_action": {"prompt_template": parsed["prompt_template"], "reasoning": parsed["reasoning"], "identified_topics": parsed["identified_topics"]}}
 
     except Exception as exc:
-        error = str(exc)
+        error = str(exc)[:100]
         action_str = "parse_error"
-        # Fallback minimal action
-        if task_type == TaskType.CLASSIFY:
-            msgs = observation.get("messages", [])
-            labels = observation.get("available_labels", ["general"])
-            action = Action(
-                task_type=TaskType.CLASSIFY,
-                classify_action=ClassifyAction(
-                    classifications={m["id"]: labels[0] for m in msgs}
-                ),
-            )
-        elif task_type == TaskType.CLUSTER:
-            msgs = observation.get("messages", [])
-            action = Action(
-                task_type=TaskType.CLUSTER,
-                cluster_action=ClusterAction(
-                    clusters={"cluster_1": [m["id"] for m in msgs]},
-                    cluster_labels={"cluster_1": "general discussion"},
-                ),
-            )
+        msgs = obs.get("messages", [])
+        if task_type == "classify":
+            labels = obs.get("available_labels", ["general"])
+            action = {"task_type": "classify", "classify_action": {"classifications": {m["id"]: labels[0] for m in msgs}}}
+        elif task_type == "cluster":
+            action = {"task_type": "cluster", "cluster_action": {"clusters": {"cluster_1": [m["id"] for m in msgs]}, "cluster_labels": {"cluster_1": "general discussion"}}}
         else:
-            action = Action(
-                task_type=TaskType.PROMPT_GEN,
-                prompt_gen_action=PromptGenAction(
-                    prompt_template="You are a helpful assistant for this business group. Respond professionally to all queries and provide accurate information based on the business context.",
-                    reasoning="Fallback due to parse error.",
-                    identified_topics=["general"],
-                ),
-            )
+            action = {"task_type": "prompt_gen", "prompt_gen_action": {"prompt_template": "You are a helpful assistant for this business group. Respond professionally to all queries.", "reasoning": "Fallback.", "identified_topics": ["general"]}}
 
     return action, action_str, error
 
-
 # ---------------------------------------------------------------------------
-# Run a single task episode
+# Run a single episode
 # ---------------------------------------------------------------------------
 
-def run_episode(
-    client: OpenAI,
-    env: BusinessChatEnv,
-    task_type: TaskType,
-    business_type: BusinessType,
-) -> float:
-    task_name = f"{task_type.value}-{business_type.value}"
+def run_episode(client, task_type: str, business_type: str) -> float:
+    task_name = f"{task_type}-{business_type}"
+    session_id = f"{task_type}-{business_type}-{int(time.time())}"
     log_start(task=task_name, env=BENCHMARK, model=MODEL_NAME)
 
     rewards: List[float] = []
@@ -270,63 +230,41 @@ def run_episode(
     success = False
 
     try:
-        reset_result = env.reset(task_type=task_type, business_type=business_type)
-        observation = reset_result.observation.model_dump_for_agent()
-
-        # Verbose: show what the agent sees
-        ctx = observation["business_context"]
+        obs = env_reset(session_id, task_type, business_type)
+        ctx = obs["business_context"]
         print(f"\n{'='*60}", flush=True)
         print(f"[VERBOSE] Business : {ctx['business_name']} ({ctx['business_type']})", flush=True)
-        print(f"[VERBOSE] Group    : {ctx['group_name']}", flush=True)
-        print(f"[VERBOSE] Task     : {task_type.value}", flush=True)
-        if observation.get("available_labels"):
-            print(f"[VERBOSE] Labels   : {observation['available_labels']}", flush=True)
-        print(f"[VERBOSE] Messages ({len(observation['messages'])} total, showing first 5):", flush=True)
-        for m in observation["messages"][:5]:
-            print(f"[VERBOSE]   [{m['id']}] {m['sender']}: {m['text'][:80]}", flush=True)
+        print(f"[VERBOSE] Task     : {task_type}", flush=True)
+        print(f"[VERBOSE] Messages : {len(obs['messages'])} total", flush=True)
         print(f"{'='*60}\n", flush=True)
 
         for step in range(1, MAX_STEPS + 1):
-            action, action_str, error = get_action(client, task_type, observation)
-            result = env.step(action)
+            action, action_str, error = get_action(client, task_type, obs)
+            result = env_step(session_id, action)
 
-            reward = result.reward.score
-            done = result.done
+            reward = result.get("reward", {}).get("score", 0.0)
+            done = result.get("done", False)
+            obs = result.get("observation", obs)
 
             rewards.append(reward)
             steps_taken = step
-            observation = result.observation.model_dump_for_agent()
 
-            # Verbose: show what the agent produced
-            if task_type == TaskType.CLASSIFY and action.classify_action:
-                sample = dict(list(action.classify_action.classifications.items())[:5])
-                print(f"[VERBOSE] Classifications (first 5): {sample}", flush=True)
-            elif task_type == TaskType.CLUSTER and action.cluster_action:
-                for cid, label in action.cluster_action.cluster_labels.items():
-                    msgs = action.cluster_action.clusters.get(cid, [])
-                    print(f"[VERBOSE] Cluster '{label}': {len(msgs)} messages", flush=True)
-            elif task_type == TaskType.PROMPT_GEN and action.prompt_gen_action:
-                print(f"[VERBOSE] Topics: {action.prompt_gen_action.identified_topics}", flush=True)
-                print(f"[VERBOSE] Prompt template:\n{action.prompt_gen_action.prompt_template}\n", flush=True)
-                print(f"[VERBOSE] Reasoning: {action.prompt_gen_action.reasoning}", flush=True)
-
-            print(f"[VERBOSE] Reward breakdown: {result.reward.breakdown}", flush=True)
-            print(f"[VERBOSE] Feedback: {result.reward.feedback}\n", flush=True)
-
+            print(f"[VERBOSE] Reward: {result.get('reward', {})}", flush=True)
             log_step(step=step, action=action_str, reward=reward, done=done, error=error)
 
             if done:
                 break
 
-        score = max(rewards) if rewards else 0.0
-        score = round(min(max(score, 0.0), 1.0), 3)
+        score = round(min(max(max(rewards) if rewards else 0.0, 0.0), 1.0), 3)
         success = score >= SUCCESS_THRESHOLD
+
+    except Exception as exc:
+        print(f"[VERBOSE] Episode error: {exc}", flush=True)
 
     finally:
         log_end(success=success, steps=steps_taken, score=score, rewards=rewards)
 
     return score
-
 
 # ---------------------------------------------------------------------------
 # Main
@@ -341,25 +279,21 @@ def main() -> None:
         )
     else:
         client = OpenAI(base_url=API_BASE_URL or None, api_key=API_KEY)
-    env = BusinessChatEnv()
 
-    # 3 runs: one per task, using electronics_retail as the representative business
     tasks = [
-        (TaskType.CLASSIFY, BusinessType.ELECTRONICS_RETAIL),
-        (TaskType.CLUSTER, BusinessType.RESTAURANT_CHAIN),
-        (TaskType.PROMPT_GEN, BusinessType.REAL_ESTATE),
+        ("classify", "electronics_retail"),
+        ("cluster", "restaurant_chain"),
+        ("prompt_gen", "real_estate"),
     ]
 
     all_scores = []
     for task_type, business_type in tasks:
-        score = run_episode(client, env, task_type, business_type)
+        score = run_episode(client, task_type, business_type)
         all_scores.append(score)
 
+    avg = sum(all_scores) / len(all_scores) if all_scores else 0.0
     scores_str = ",".join(f"{s:.3f}" for s in all_scores)
-    print(
-        f"\n[SUMMARY] tasks={len(tasks)} avg_score={sum(all_scores)/len(all_scores):.3f} scores={scores_str}",
-        flush=True,
-    )
+    print(f"\n[SUMMARY] tasks={len(tasks)} avg_score={avg:.3f} scores={scores_str}", flush=True)
 
 
 if __name__ == "__main__":
