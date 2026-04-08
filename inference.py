@@ -343,11 +343,11 @@ def main() -> None:
         client = OpenAI(base_url=API_BASE_URL or None, api_key=API_KEY)
     env = BusinessChatEnv()
 
-    # All 9 combinations: 3 tasks x 3 businesses
+    # 3 runs: one per task, using electronics_retail as the representative business
     tasks = [
-        (task_type, business_type)
-        for task_type in TaskType
-        for business_type in BusinessType
+        (TaskType.CLASSIFY, BusinessType.ELECTRONICS_RETAIL),
+        (TaskType.CLUSTER, BusinessType.RESTAURANT_CHAIN),
+        (TaskType.PROMPT_GEN, BusinessType.REAL_ESTATE),
     ]
 
     all_scores = []
